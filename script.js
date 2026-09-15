@@ -7,7 +7,7 @@ const collectionRef = db.collection("coleccion");
 
 let state = {};
 let currentView = "band"; // "band" | "solo"
-let currentFilter = "all";
+let currentFilters = new Set(); // vacío = "Todos"
 let currentArtist = "all";
 let searchTerm = "";
 let onlyMissing = false;
@@ -52,7 +52,7 @@ function albumsInView() {
 }
 
 function matchesFilters(album) {
-  if (currentFilter !== "all" && album.category !== currentFilter) return false;
+  if (currentFilters.size > 0 && !currentFilters.has(album.category)) return false;
   if (searchTerm && !album.title.toLowerCase().includes(searchTerm)) return false;
   if (onlyMissing && getEntry(album.id).owned) return false;
   return true;
@@ -75,22 +75,30 @@ function renderFilterTabs() {
   const categories = currentView === "band" ? BAND_CATEGORIES : SOLO_CATEGORIES;
   filterTabsEl.innerHTML = "";
 
-  const makeTab = (label, value) => {
+  const todosBtn = document.createElement("button");
+  todosBtn.className = "tab" + (currentFilters.size === 0 ? " active" : "");
+  todosBtn.textContent = "Todos";
+  todosBtn.addEventListener("click", () => {
+    currentFilters.clear();
+    renderFilterTabs();
+    renderTable();
+  });
+  filterTabsEl.appendChild(todosBtn);
+
+  for (const cat of categories) {
     const btn = document.createElement("button");
-    btn.className = "tab" + (currentFilter === value ? " active" : "");
-    btn.textContent = label;
-    btn.dataset.filter = value;
+    btn.className = "tab" + (currentFilters.has(cat) ? " active" : "");
+    btn.textContent = cat === "Recopilatorio" ? "Recopilatorios" : cat;
     btn.addEventListener("click", () => {
-      currentFilter = value;
+      if (currentFilters.has(cat)) {
+        currentFilters.delete(cat);
+      } else {
+        currentFilters.add(cat);
+      }
       renderFilterTabs();
       renderTable();
     });
-    return btn;
-  };
-
-  filterTabsEl.appendChild(makeTab("Todos", "all"));
-  for (const cat of categories) {
-    filterTabsEl.appendChild(makeTab(cat === "Recopilatorio" ? "Recopilatorios" : cat, cat));
+    filterTabsEl.appendChild(btn);
   }
 }
 
@@ -225,7 +233,7 @@ viewTabs.forEach((tab) => {
     viewTabs.forEach((t) => t.classList.remove("active"));
     tab.classList.add("active");
     currentView = tab.dataset.view;
-    currentFilter = "all";
+    currentFilters.clear();
     currentArtist = "all";
     renderArtistSelect();
     renderFilterTabs();

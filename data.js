@@ -8,7 +8,7 @@
 // artist: "The Rolling Stones" o el nombre del integrante/solista
 // ============================================================================
 
-const APP_VERSION = "1.8";
+const APP_VERSION = "1.9";
 
 function slug(...parts) {
   return parts

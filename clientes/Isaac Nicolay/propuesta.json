@@ -1,0 +1,146 @@
+{
+  "cliente": { "nombre": "Isaac Nicolay" },
+  "asesores": [
+    { "nombre": "Francisco José Monet", "email": "fmonet@max.capital", "telefono": "11 5928 7717" }
+  ],
+  "fecha": "15/09/2026",
+  "anio": "2026",
+  "titulo": "Propuesta de Inversión",
+  "subtitulo": "Menos concentración en pocos nombres, la misma convicción arriesgada.",
+  "objetivo": "Reducir la concentración en pocas posiciones, sin resignar el perfil arriesgado",
+  "capitulos": [
+    {
+      "tipo": "perfil",
+      "titulo": "Punto de partida",
+      "subtitulo": "Esto es lo que entendimos de tu cartera y tu forma de invertir. Si algo no coincide, corrijámoslo antes de avanzar.",
+      "rasgos": [
+        { "label": "Perfil de riesgo", "valor": "Arriesgado" },
+        { "label": "Cartera actual", "valor": "≈ USD 175.000, en TM Inversiones" },
+        { "label": "Cómo está armada hoy", "valor": "Posiciones elegidas una por una, por vos" }
+      ],
+      "notas": [
+        "Tu perfil es arriesgado y no tenés problema en tomar riesgo en los activos que elegís — eso no cambia.",
+        "Hoy cuatro posiciones puntuales concentran el 88% de tu cartera. No proponemos bajar el riesgo: proponemos que ese riesgo esté mejor repartido."
+      ],
+      "puntos": [
+        "Mantenemos tu perfil arriesgado: la mayoría del patrimonio sigue en renta variable.",
+        "Bajamos el peso relativo de las posiciones más concentradas, sin salir de ellas del todo.",
+        "Sumamos vehículos administrados, para que la cartera siga funcionando sin que tengas que estar encima."
+      ]
+    },
+    {
+      "tipo": "forma_de_trabajo",
+      "titulo": "Cómo trabajamos",
+      "intro": "Nuestro rol es el de asesor: administramos la porción que pasa a vehículos administrados, así el seguimiento no depende de tu agenda.",
+      "pasos": [
+        { "titulo": "Reducimos las posiciones más concentradas", "texto": "Bajamos el peso relativo de las posiciones más grandes, sin liquidarlas por completo." },
+        { "titulo": "Sumamos vehículos administrados", "texto": "El capital que se libera pasa a FCI Max Renta Fija Dólares y a la Cartera CEDEARs de ETFs." },
+        { "titulo": "Rebalanceamos por vos", "texto": "El equipo ajusta la composición en el tiempo, sin que tengas que coordinar cada movimiento." },
+        { "titulo": "Reporting, no reuniones obligatorias", "texto": "Te mantenemos informado con reporting, para que el seguimiento no dependa de encontrar un hueco en la agenda." }
+      ]
+    },
+    {
+      "tipo": "cartera_actual",
+      "titulo": "Tu cartera hoy",
+      "subtitulo": "TM Inversiones, comitente 33359 — datos al 15/09/2026.",
+      "columnas": ["descripcion", "clase", "ponderacion", "monto"],
+      "items": [
+        { "descripcion": "Coca-Cola (KO CEDEAR)", "clase": "Renta Variable", "ponderacion": "34,9%", "monto": "USD 60.974" },
+        { "descripcion": "Petrobras (PBR CEDEAR)", "clase": "Renta Variable", "ponderacion": "20,4%", "monto": "USD 35.654" },
+        { "descripcion": "YPF (YPFD)", "clase": "Renta Variable", "ponderacion": "18,0%", "monto": "USD 31.508" },
+        { "descripcion": "Chevron (CVX CEDEAR)", "clase": "Renta Variable", "ponderacion": "14,5%", "monto": "USD 25.325" },
+        { "descripcion": "Cuenta corriente (pesos + USD)", "clase": "Liquidez", "ponderacion": "6,7%", "monto": "USD 11.697" },
+        { "descripcion": "Transp. Gas del Sur (TGSU2)", "clase": "Renta Variable", "ponderacion": "0,9%", "monto": "USD 1.609" },
+        { "descripcion": "Amazon (AMZN CEDEAR)", "clase": "Renta Variable", "ponderacion": "0,9%", "monto": "USD 1.570" },
+        { "descripcion": "Google (GOOGL CEDEAR)", "clase": "Renta Variable", "ponderacion": "0,9%", "monto": "USD 1.544" },
+        { "descripcion": "Pampa Holding (PAMP)", "clase": "Renta Variable", "ponderacion": "0,8%", "monto": "USD 1.454" },
+        { "descripcion": "Johnson & Johnson (JNJ CEDEAR)", "clase": "Renta Variable", "ponderacion": "0,8%", "monto": "USD 1.415" },
+        { "descripcion": "Mercado Libre (MELI CEDEAR)", "clase": "Renta Variable", "ponderacion": "0,5%", "monto": "USD 831" },
+        { "descripcion": "Invesco QQQ Trust (QQQ CEDEAR)", "clase": "Renta Variable", "ponderacion": "0,3%", "monto": "USD 586" },
+        { "descripcion": "Globant (GLOB CEDEAR)", "clase": "Renta Variable", "ponderacion": "0,2%", "monto": "USD 459" },
+        { "descripcion": "USD billetes", "clase": "Liquidez", "ponderacion": "0,2%", "monto": "USD 303" }
+      ],
+      "total": { "descripcion": "Total", "ponderacion": "100,0%" },
+      "titulo_acciones": "El rebalanceo propuesto",
+      "intro_acciones": "Reducimos el peso de las posiciones más concentradas, sin salir de ellas del todo, y con ese capital sumamos vehículos administrados.",
+      "acciones": {
+        "orden": ["vender", "comprar"],
+        "vender": [
+          { "nombre": "Coca-Cola (KO)", "monto": "De 34,9% a 15,0%", "razon": "Es la posición más grande de la cartera con diferencia. Baja la concentración en un solo nombre, sin salir del todo." },
+          { "nombre": "Petrobras (PBR)", "monto": "De 20,4% a 14,7%", "razon": "Reduce la exposición a un solo nombre del sector energético." },
+          { "nombre": "YPF (YPFD)", "monto": "De 18,0% a 13,0%", "razon": "Reduce la exposición a un solo nombre del sector energético." },
+          { "nombre": "Chevron (CVX)", "monto": "De 14,5% a 10,4%", "razon": "Reduce la exposición a un solo nombre del sector energético." },
+          { "nombre": "Transp. Gas del Sur (TGSU2)", "monto": "De 0,9% a 0,7%", "razon": "Completa la baja de peso del bloque energético." }
+        ],
+        "comprar": [
+          { "nombre": "Cartera CEDEARs de ETFs", "monto": "20,9% de la cartera total", "razon": "Diversifica en mercados globales, en vez de depender de unos pocos nombres." },
+          { "nombre": "FCI Max Renta Fija Dólares", "monto": "13,9% de la cartera total", "razon": "Suma un ancla líquida en dólares, con rendimiento y rescate en 24 horas." }
+        ]
+      }
+    },
+    {
+      "tipo": "distribuciones",
+      "titulo": "Cómo queda distribuida la cartera",
+      "subtitulo": "Menos concentración en pocos nombres, más vehículos administrados.",
+      "deltas": [
+        { "label": "Vehículos administrados", "valor": "+34,9 pp", "nota": "0,0% → 34,9%", "destacado": true },
+        { "label": "Coca-Cola (KO)", "valor": "−19,9 pp", "nota": "34,9% → 15,0%" },
+        { "label": "Energía (YPFD+TGSU2+CVX+PBR)", "valor": "−15,0 pp", "nota": "53,8% → 38,8%" }
+      ],
+      "graficos": [
+        { "titulo": "Antes", "tipo": "donut", "items": [
+          { "label": "Energía", "valor": 53.79 },
+          { "label": "Coca-Cola (KO)", "valor": 34.86 },
+          { "label": "Otras posiciones", "valor": 4.49 },
+          { "label": "Liquidez", "valor": 6.86 }
+        ] },
+        { "titulo": "Después", "tipo": "donut", "items": [
+          { "label": "Energía", "valor": 38.79 },
+          { "label": "Coca-Cola (KO)", "valor": 15.00 },
+          { "label": "Vehículos administrados", "valor": 34.86 },
+          { "label": "Otras posiciones", "valor": 4.49 },
+          { "label": "Liquidez", "valor": 6.86 }
+        ] }
+      ]
+    },
+    {
+      "tipo": "cartera_sugerida",
+      "titulo": "A dónde va el capital que se libera",
+      "subtitulo": "El 34,9% de la cartera que hoy está concentrado en pocos nombres, reasignado a dos vehículos administrados.",
+      "columnas": ["clase", "descripcion", "riesgo", "ponderacion", "monto"],
+      "kpis": [
+        { "label": "Capital a reasignar", "valor": "USD 60.975", "accent": true, "nota": "34,9% de la cartera total" }
+      ],
+      "items": [
+        { "clase": "Renta Variable", "descripcion": "Cartera CEDEARs de ETFs", "riesgo": "Alto", "ponderacion": "60,0%", "monto": "USD 36.585" },
+        { "clase": "Renta Fija", "descripcion": "FCI Max Renta Fija Dólares", "riesgo": "Bajo", "ponderacion": "40,0%", "monto": "USD 24.390" }
+      ],
+      "total": { "clase": "Total", "ponderacion": "100,0%", "monto": "USD 60.975" },
+      "grafico": { "titulo": "Composición del capital reasignado", "items": [
+        { "label": "CEDEARs ETF", "valor": 60 },
+        { "label": "FCI Renta Fija", "valor": 40 }
+      ] },
+      "nota": "Coherente con tu perfil arriesgado: el capital que se libera mantiene más peso en renta variable, pero diversificada en vez de concentrada en pocos nombres."
+    },
+    {
+      "tipo": "instrumentos",
+      "titulo": "Qué hace cada componente",
+      "fichas": [
+        {
+          "nombre": "FCI Max Renta Fija Dólares",
+          "tipo": "Fondo propio",
+          "riesgo": "Bajo",
+          "que_hace": "Es el ancla líquida en dólares del rebalanceo: mientras el resto de la cartera se reacomoda, esta porción rinde con bajo riesgo y rescate en 24 horas.",
+          "datos": [ { "label": "Rescate", "valor": "24 horas" }, { "label": "Moneda", "valor": "USD" } ]
+        },
+        {
+          "nombre": "Cartera CEDEARs de ETFs",
+          "tipo": "Cuenta administrada",
+          "riesgo": "Alto",
+          "que_hace": "Reemplaza la concentración en pocos nombres por una cartera diversificada en mercados globales, sin que tengas que elegir ni seguir cada posición vos mismo.",
+          "datos": [ { "label": "Horizonte", "valor": "Largo plazo" }, { "label": "Diversificación", "valor": "Sectores, regiones y clases de activo" } ]
+        }
+      ]
+    }
+  ]
+}

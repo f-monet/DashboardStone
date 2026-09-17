@@ -53,6 +53,21 @@ renta variable (más 6,7% de liquidez). Coherente con que se define "arriesgado"
 pero hoy el riesgo que corre no es "mercado accionario en general": es cuatro
 apuestas puntuales, una de ellas superpuesta con su propio sueldo.
 
+## 3 puntos de dolor
+
+1. **Concentración en 4 nombres: 87,7% de la cartera.** KO (34,9%) + PBR (20,4%) +
+   YPFD (18,0%) + CVX (14,5%). No es una cartera de 13 posiciones — son cuatro
+   apuestas grandes con ruido alrededor. Un mal trimestre en cualquiera de las
+   cuatro mueve el patrimonio entero.
+2. **53,8% (≈USD 94.100) en petróleo y gas, superpuesto con su propio sueldo.**
+   YPFD + TGSU2 + CVX + PBR. Isaac trabaja en Pan American Energy: si al sector
+   le va mal, le pega a la cartera y al ingreso al mismo tiempo. Este punto es
+   para vos, no para la propuesta — ver nota más abajo.
+3. **Cero vehículos administrados o diversificados.** Todo es stock-picking
+   individual, salvo un 0,3% en QQQ. No hay ancla de renta fija ni nada que
+   diversifique dentro de una misma clase de activo — el riesgo depende
+   enteramente de acertar nombre por nombre.
+
 ## Lo que no toqué
 
 Esto es análisis, no propuesta. No armé todavía una recomendación de

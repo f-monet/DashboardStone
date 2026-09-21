@@ -1,0 +1,86 @@
+{
+  "cliente": { "nombre": "Propuesta Confidencial" },
+  "asesores": [
+    { "nombre": "Francisco José Monet", "email": "fmonet@max.capital", "telefono": "11 5928 7717" }
+  ],
+  "fecha": "21/09/2026",
+  "anio": "2026",
+  "titulo": "Propuesta de Inversión",
+  "subtitulo": "Antes de mover un dólar, resolvamos la pregunta con la que arrancó todo.",
+  "objetivo": "Resolver primero la consulta impositiva y de tipo de cambio, y después construir la cartera — local e internacional",
+  "capitulos": [
+    {
+      "tipo": "perfil",
+      "titulo": "Punto de partida",
+      "subtitulo": "Esto es lo que entendimos hasta acá. Si algo no coincide, lo charlamos antes de seguir.",
+      "rasgos": [
+        { "label": "Consulta original", "valor": "Impuestos y el spread para pasar de MEP a cable" },
+        { "label": "Contexto", "valor": "Dólares familiares, hoy con cuenta en Banco Comafi" },
+        { "label": "Alternativa en evaluación", "valor": "Banca privada offshore (Insigneo, cuenta en EE.UU.)" }
+      ],
+      "notas": [
+        "Antes de decidir dónde va la cartera, conviene resolver la pregunta con la que arrancó todo: qué pasa impositivamente y cuánto cuesta salir de pesos a dólares afuera.",
+        "Eso no cambia según dónde termine el dinero — importa antes de decidir, no después."
+      ]
+    },
+    {
+      "tipo": "kpis",
+      "titulo": "En números, lo que cambia",
+      "items": [
+        { "label": "Modelo de cobro", "valor": "Honorario de administración", "accent": true, "nota": "No por transacción" },
+        { "label": "Presencia", "valor": "Todo el año en Argentina", "nota": "No de paso" },
+        { "label": "Punto de partida", "valor": "Impuestos y spread MEP-cable", "nota": "Antes de mover un dólar" }
+      ]
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Por qué esto va antes que la cartera",
+      "columnas": [
+        { "titulo": "La pregunta que trajiste", "parrafos": [
+          "Todavía no está resuelto qué pasa impositivamente ni cuánto cuesta hoy el spread de MEP a cable para sacar los dólares.",
+          "Esa respuesta cambia la cuenta completa: importa antes de decidir dónde termina la plata, no después." ] },
+        { "titulo": "Estamos acá para resolverla", "parrafos": [
+          "Somos un equipo local, presente todo el año, no de paso por Argentina.",
+          "La resolvemos primero, y con eso ya decidido armamos la cartera — local, internacional, o las dos cosas." ] }
+      ]
+    },
+    {
+      "tipo": "tabla",
+      "titulo": "Punto por punto",
+      "headers": ["", "Lo que les propusieron", "Max Capital"],
+      "alineacion": "lll",
+      "filas": [
+        ["Cómo se cobra", "Por transacción, hasta 1% + USD 375/año + 0,91% de expense ratio en los fondos", "Honorario de administración sobre los activos, no por transacción"],
+        ["Dónde está el asesor", "Licencia en Uruguay; viaja a Argentina con frecuencia", "Acá, todo el año"],
+        ["Quién decide", "Modelo no discrecional: cada operación se decide junto al cliente", "Definís el objetivo; el equipo lo implementa y lo sigue"],
+        ["La pregunta de impuestos y MEP/cable", "No la contempla — la propuesta arranca después de ese paso", "Es el punto de partida de la conversación"],
+        ["Alcance", "Sólo la cuenta offshore", "Cartera local e internacional, pensadas juntas"]
+      ]
+    },
+    {
+      "tipo": "texto",
+      "titulo": "El mismo ejercicio que ya hicieron, con nuestra filosofía",
+      "subtitulo": "Podemos construir tanto un perfil conservador como uno moderado.",
+      "columnas": [
+        { "titulo": "Conservador", "parrafos": [
+          "Foco en preservar capital, con renta fija como núcleo.",
+          "Pensado para quien prioriza estabilidad por sobre crecimiento." ] },
+        { "titulo": "Moderado", "parrafos": [
+          "Suma renta variable diversificada al núcleo de renta fija.",
+          "Pensado para quien puede convivir con algo más de volatilidad a cambio de mayor crecimiento esperado." ] }
+      ],
+      "nota": "El detalle instrumento por instrumento lo armamos juntos una vez que definan el perfil y el monto final."
+    },
+    {
+      "tipo": "forma_de_trabajo",
+      "titulo": "Cómo trabajamos",
+      "intro": "Nuestro rol es el de asesor, con honorario de administración sobre los activos: el resultado depende de que la cartera funcione en el tiempo, no de cuánto se opere.",
+      "pasos": [
+        { "titulo": "Resolvemos la pata impositiva", "texto": "Definimos qué pasa con el spread MEP-cable y la parte fiscal antes de mover un dólar." },
+        { "titulo": "Definimos el mandato", "texto": "Objetivo, horizonte y perfil de riesgo, por escrito." },
+        { "titulo": "Construimos la cartera", "texto": "Local, internacional, o las dos, según lo que decidamos juntos." },
+        { "titulo": "Seguimiento permanente", "texto": "Reporting y rebalanceo, con el mismo equipo todo el año." }
+      ]
+    }
+  ]
+}

@@ -112,7 +112,6 @@
     {
       "tipo": "forma_de_trabajo",
       "titulo": "Cómo trabajamos",
-      "intro": "Nuestro rol es el de asesor: administramos la cartera para vos, con honorario sobre los activos, no por transacción.",
       "pasos": [
         { "titulo": "Abrimos la cuenta en Max Uruguay", "texto": "El capital pasa de la cuenta remunerada en EE.UU. a una cuenta a tu nombre en Max Uruguay." },
         { "titulo": "Invertimos en fondos UCITS", "texto": "Domiciliados en Europa, con la composición que ya vimos." },

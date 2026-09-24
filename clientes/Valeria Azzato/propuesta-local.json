@@ -1,0 +1,82 @@
+{
+  "cliente": { "nombre": "Valeria Azzato" },
+  "asesores": [
+    { "nombre": "Francisco José Monet", "email": "fmonet@max.capital", "telefono": "11 5928 7717" }
+  ],
+  "fecha": "24/09/2026",
+  "anio": "2026",
+  "titulo": "Propuesta de Inversión",
+  "subtitulo": "Un primer paso simple para lo que hoy vas a empezar a invertir en Argentina.",
+  "objetivo": "Invertir el capital local con un perfil conservador, diversificando lo que hoy está concentrado en inmuebles",
+  "capitulos": [
+    {
+      "tipo": "perfil",
+      "titulo": "Punto de partida",
+      "subtitulo": "Esto es lo que entendimos de tu situación. Si algo no coincide, corrijámoslo antes de avanzar.",
+      "rasgos": [
+        { "label": "Perfil de riesgo", "valor": "Conservador" },
+        { "label": "Capital a invertir (local)", "valor": "USD 20.000 – 30.000" },
+        { "label": "Dónde invierte hoy", "valor": "Mayormente en inmuebles («ladrillos») — es lo que conocés" }
+      ],
+      "notas": [
+        "El grueso de tu patrimonio hoy está en inmuebles. Esta cuenta local es un primer paso en mercado de capitales, con el mismo perfil conservador que ya definimos para la cuenta offshore.",
+        "Arranca simple, con dos vehículos administrados, para que puedas ver cómo funciona antes de sumar complejidad."
+      ],
+      "puntos": [
+        "Mismo perfil conservador que la cuenta de Max Uruguay.",
+        "Diversifica lo que hoy está concentrado en inmuebles.",
+        "Dos vehículos administrados, sin que tengas que elegir instrumento por instrumento."
+      ]
+    },
+    {
+      "tipo": "cartera_sugerida",
+      "titulo": "Cartera sugerida — cuenta local",
+      "subtitulo": "Núcleo en dólares, con diversificación complementaria.",
+      "columnas": ["clase", "descripcion", "riesgo", "ponderacion", "monto"],
+      "kpis": [
+        { "label": "Capital a invertir", "valor": "USD 20.000 – 30.000", "accent": true }
+      ],
+      "items": [
+        { "clase": "Renta Fija", "descripcion": "FCI Max Renta Fija Dólares", "riesgo": "Bajo", "ponderacion": "75,0%", "monto": "USD 15.000 – 22.500" },
+        { "clase": "Renta Variable", "descripcion": "Cartera CEDEARs de ETFs", "riesgo": "Alto", "ponderacion": "25,0%", "monto": "USD 5.000 – 7.500" }
+      ],
+      "total": { "clase": "Total", "ponderacion": "100,0%" },
+      "grafico": { "titulo": "Composición", "items": [
+        { "label": "Renta Fija", "valor": 75 },
+        { "label": "Renta Variable", "valor": 25 }
+      ] },
+      "nota": "Los montos son un rango: se ajustan al capital final que definas destinar a la cuenta local."
+    },
+    {
+      "tipo": "instrumentos",
+      "titulo": "Qué hace cada componente",
+      "fichas": [
+        {
+          "nombre": "FCI Max Renta Fija Dólares",
+          "tipo": "Fondo propio",
+          "riesgo": "Bajo",
+          "que_hace": "Es el ancla líquida en dólares de la cuenta local: mientras el grueso de tu patrimonio sigue en inmuebles, esta porción rinde con bajo riesgo y rescate en 24 horas.",
+          "datos": [ { "label": "Rescate", "valor": "24 horas" }, { "label": "Moneda", "valor": "USD" } ]
+        },
+        {
+          "nombre": "Cartera CEDEARs de ETFs",
+          "tipo": "Cuenta administrada",
+          "riesgo": "Alto",
+          "que_hace": "Suma la diversificación que hoy no tenés: mercados globales, en instrumentos que no dependen del ladrillo.",
+          "datos": [ { "label": "Horizonte", "valor": "Largo plazo" }, { "label": "Diversificación", "valor": "Sectores, regiones y clases de activo" } ]
+        }
+      ]
+    },
+    {
+      "tipo": "forma_de_trabajo",
+      "titulo": "Cómo trabajamos",
+      "intro": "Arrancamos simple, con dos vehículos administrados, y sumamos complejidad sólo si hace falta.",
+      "pasos": [
+        { "titulo": "Abrimos la cuenta local", "texto": "A tu nombre, en Max Capital." },
+        { "titulo": "Fondeamos con el capital definido", "texto": "Entre USD 20.000 y 30.000, según lo que definas." },
+        { "titulo": "Rebalanceamos periódicamente", "texto": "Ajustamos la composición para sostener el perfil conservador en el tiempo." },
+        { "titulo": "Reporting permanente", "texto": "El mismo equipo y el mismo criterio que en la cuenta offshore." }
+      ]
+    }
+  ]
+}

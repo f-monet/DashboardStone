@@ -27,8 +27,19 @@ no es (todavía) capital que quiera repatriar.
 ¿Podemos ofrecerle una alternativa vía Uruguay? ¿UCITS para que sea más
 eficiente a nivel impositivo?
 
+## Confirmado con el asesor
+
+Max Capital sí tiene:
+- **Cuenta offshore en Max Uruguay.**
+- **Acceso a UCITS** — fondos acumulativos registrados en Europa.
+
+Esto habilita armar una propuesta real para los USD 100.000 que hoy están
+parados en la cuenta de EE.UU., migrando a la cuenta de Max UY con fondos
+UCITS (evita el estate tax de EE.UU. para no residentes, umbral USD 60.000).
+
 ## Pendiente
 
-No se armó todavía ninguna propuesta. Ver respuesta en el chat sobre UCITS/
-Uruguay — hay una parte conceptual (por qué tendría sentido) y una parte que
-depende de confirmar qué puede ofrecer efectivamente Max Capital.
+No se armó todavía ninguna propuesta. Falta definir con el asesor: perfil de
+riesgo, qué UCITS puntuales ofrece Max UY (lineup de fondos), si los USD
+20.000-30.000 locales entran en la misma propuesta o se tratan aparte, y
+formato.

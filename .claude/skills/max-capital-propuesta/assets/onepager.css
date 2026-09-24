@@ -121,10 +121,25 @@
 .sheet.tighter table.mc tbody td{padding:3.8px 6px;}
 .sheet.tighter .op-dist{gap:9px;}
 .sheet.tighter .op-dist .donut-row svg{width:74px;height:74px;}
-.sheet.tighter .donut-legend{font-size:8px;}
-.sheet.tighter .donut-legend-row{padding:1.8px 0;}
+.sheet.tighter table.donut-legend{font-size:8px;}
+/* Sólo arriba y abajo: el atajo `padding:1.8px 0` también ponía en cero el
+   margen izquierdo de la columna de porcentajes y los pegaba a la etiqueta. */
+.sheet.tighter .donut-legend-row td{padding-top:1.8px;padding-bottom:1.8px;}
 
 /* Una sola distribución no se estira a lo ancho de la hoja: se acota para que
    el donut y su leyenda queden juntos en vez de separados por medio pliego. */
 .op-dist.g1{max-width:430px;}
 .op-dist.g2{max-width:820px;}
+
+/* ---------- Texto legal en hoja aparte ----------
+   Cuando el cuerpo no deja lugar, el generador mueve el disclaimer a una segunda
+   hoja (ver _JS_ONEPAGER_LEGAL). La primera hoja libera el alto que le reservaba
+   y conserva al pie sólo los contactos. La segunda lleva el texto legal solo,
+   arriba y en un cuerpo legible: con la hoja entera para él no tiene sentido
+   dejarlo en 5,6px. Ver criterio 35. */
+.sheet.legal-aparte .op-body{padding-bottom:56px;}
+.sheet.legal-aparte .op-foot{justify-content:flex-end;}
+.sheet-legal{padding:40px;}
+.op-legal .disclaimer{font-size:8.4px;line-height:1.6;padding:18px 22px;}
+.op-legal .disclaimer b{font-size:9px;margin-bottom:6px;}
+.op-legal .disclaimer .matriculas{margin-top:12px;padding-top:10px;}

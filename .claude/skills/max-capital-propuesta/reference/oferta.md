@@ -21,10 +21,25 @@ Un esquema de administración alinea al asesor con el cliente: el resultado
 depende de que la cartera funcione a lo largo del tiempo, no de cuánto se opere.
 
 **Esta distinción es del tipo que no se puede inferir de un fact sheet.** Si la
-propuesta es para una persona física, empujá hacia fee based. Si es para una
-empresa, preguntá.
+propuesta es para una persona física, la cartera tiene que llevar vehículos
+administrados. Si es para una empresa, preguntá.
 
----
+### Esto es política interna, no el mensaje al cliente
+
+**La regla decide qué productos van en la cartera. No decide de qué se habla en
+la propuesta.** Con muchos clientes el esquema de comisiones no se conversa, y
+no tiene por qué: se llega al mismo lugar por el lado del producto. Se propone
+una cuenta administrada por lo que hace —diversificación global, gestión activa,
+reporting mensual—, no como "el paso hacia otro esquema de cobro".
+
+**Nunca escribas en la propuesta nada sobre el esquema de comisiones —"fee
+based", "honorario de administración", "sin comisión por operación", "migrar de
+esquema"— salvo que el asesor te haya confirmado expresamente que con este
+cliente ese tema ya se habló.** Se pregunta al arrancar, igual que quiénes
+firman — ver el paso 0 de [`SKILL.md`](../SKILL.md) y el criterio 79.
+
+Sin esa confirmación, la propuesta habla del producto. Con la confirmación, se
+puede usar el argumento de cuentas administradas de más abajo.
 
 ## Los que van en toda propuesta de banca privada
 
@@ -33,7 +48,7 @@ Salvo que el caso lo desaconseje, estos tres se proponen siempre:
 | Instrumento | Qué aporta |
 |---|---|
 | **FCI Max Renta Fija Dólares** | Tramo líquido en dólares, rescate en 24 horas, custodia local |
-| **Cartera CEDEARs de ETFs** | Renta variable global diversificada, cuenta administrada |
+| **Cuenta Administrada CEDEARs de ETFs** | Renta variable global diversificada |
 | **Notas estructuradas** | Sólo para inversores desde **USD 250.000** |
 
 El umbral de las notas estructuradas coincide con el de la cuenta internacional:
@@ -49,14 +64,41 @@ Menos prioritarios, igual de válidos:
 - **Mandato de renta fija de fondos mutuos**
 - **Mandato de renta variable de fondos mutuos**
 
-Todos responden a la misma lógica fee based y así hay que proponerlos.
+Todos son vehículos administrados, y por eso cumplen la regla de arriba. Eso
+decide que entren en la cartera; cómo se presentan al cliente sigue siendo por lo
+que hace cada producto.
+
+### Cómo se llaman en la propuesta
+
+**El producto de CEDEARs de ETFs se escribe "Cuenta Administrada CEDEARs de
+ETFs".** Siempre ese nombre, completo, en tablas, fichas y columnas de
+comprar/vender. No "Cartera CEDEARs de ETFs (cuenta administrada)": el nombre
+largo con aclaración entre paréntesis parte renglón en cualquier columna angosta
+y se lee como dos cosas distintas.
+
+### Todo producto nuevo va con su track record
+
+**Cuando la propuesta suma un producto que el cliente no tiene, se muestra cómo
+le fue.** Describirlo —objetivo, estrategia— no alcanza: el cliente decide mirando
+números. Una lámina con los datos del fact sheet vigente: rendimiento anualizado
+en las ventanas que elija el asesor, volatilidad, caída máxima y tiempo de
+recuperación, y si el fact sheet lo trae, los retornos por año calendario.
+
+Los números salen **del fact sheet vigente que aporte el asesor**, nunca de este
+archivo ni de una propuesta anterior: cambian todos los meses. Si no lo subió,
+pedíselo. Ver criterios 61, 65 y 83.
+
 
 ---
 
 ## Cuentas administradas: el argumento
 
-Material de la presentación institucional de Wealth Management. Sirve tal cual
-para el capítulo que explica por qué la propuesta va por administración:
+Material de la presentación institucional de Wealth Management. **Usalo sólo si
+el asesor confirmó que con este cliente se habla del esquema de honorarios** —
+ver "Esto es política interna" más arriba—. Sin esa confirmación, la cita y el
+beneficio 1 —la alineación de intereses "por la naturaleza del acuerdo", que es
+un argumento sobre el cobro— no entran. Los beneficios 2 a 5 sí se pueden usar,
+porque hablan del producto:
 
 > Las cuentas administradas son productos ideales para la gestión patrimonial de
 > individuos: permiten que el asesor administre la cartera del cliente para un

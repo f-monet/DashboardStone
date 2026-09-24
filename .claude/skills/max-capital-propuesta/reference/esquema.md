@@ -11,7 +11,7 @@ se dibuja — nunca aparece "None" ni una caja vacía en el PDF.
 
 ```json
 {
-  "cliente":   { "nombre": "Colegio Médico del Sur" },
+  "cliente":   { "nombre": "Cliente Ejemplo S.A." },
   "asesores":  [ { "nombre": "...", "cargo": "...", "email": "...", "telefono": "..." } ],
   "fecha":     "27/08/2026",
   "anio":      "2026",
@@ -140,8 +140,14 @@ Aparecieron resolviendo casos reales. Ninguno es obligatorio.
 | `base` | capítulo `proyeccion` | Franja sobre los KPIs con la moneda o base de cálculo. Ver criterio 36 |
 | `valor_nominal` | ítem de KPI | Cifra secundaria debajo del valor principal: el equivalente nominal de un número real |
 | `puntos` | capítulo `perfil` | Lista con viñetas, además de los párrafos de `notas` |
+| `destacado` | capítulo `perfil` | Recuadro gris al costado de la ficha con lo que no se negocia. Uno o dos ítems |
 | `tentativo` | tramo de `glidepath` | Dibuja el tramo atenuado y punteado: todavía no está decidido |
 | `fecha_corta` | raíz | Período propio para el encabezado, si no alcanza con derivarlo de `fecha` |
+| `posicion` | bloque `imagen` de `kpis` | `"abajo"` pone las tarjetas arriba en una fila y la captura a lo ancho debajo. Para capturas de 3:1 o más, que en media lámina quedan ilegibles. Ver criterio 90 |
+| `eje_cero` / `eje_en_cero` / `cero` | gráfico de `distribuciones` | Fuerza el eje en cero con barras para los dos lados. Se activa solo si algún valor es negativo. Ver criterio 97 |
+| `orientacion` / `orientation` | gráfico de `distribuciones` con eje en cero | `"vertical"` lo dibuja como columnas, para una serie por año. Sin el campo, barras horizontales |
+| `unidad` / `unit` / `moneda` | gráfico de `distribuciones` | La unidad del rótulo de las barras: `"%"` (default) o una moneda, que sale abreviada con M/K y con signo. Una serie en moneda no se normaliza ni se controla contra 100 |
+| `signo` / `conservar_signo` | capítulo `tabla` | Columnas que escriben el signo en vez de pintarse por él: lista de encabezados, lista de posiciones, o `true`. Para columnas de flujo, donde el rojo diría "perdió" sobre un retiro. Ver criterio 89 |
 | `orden` | bloque `acciones` de `cartera_actual` | Secuencia de las columnas, p. ej. `["vender","comprar"]`. Sin él, comprar → vender → mantener. En un rebalanceo se vende primero y recién después se coloca el producido; leerlo al revés obliga al cliente a reconstruir de dónde salió la plata |
 
 ### Columnas con encabezado propio

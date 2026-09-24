@@ -28,6 +28,11 @@
   --caption:#71717A;     /* texto secundario */
   --pos:#12A150;         /* comprar / positivo */
   --neg:#F31260;         /* vender / negativo */
+  /* El verde de la marca contra el rojo da ΔE 1,3 en deuteranopia: son el mismo
+     color. Sirve donde el color acompaña a un texto —las pastillas de comprar y
+     vender—, no donde el color ES el dato. Este verde es el mismo un paso más
+     oscuro (ΔE 10,6) y es el que usan las series por signo. Ver criterio 97. */
+  --pos-serie:#15803D;   /* serie positiva en un gráfico */
   --yellow:#F5A524;      /* mantener / atención */
 
   --r-sm:6px; --r-md:10px; --r-lg:14px; --r-full:9999px;
@@ -127,17 +132,28 @@ table.mc td.col-trailer,table.mc td.col-clase{white-space:nowrap;}
   padding:11px 13px;min-width:0;}
 .donut-card h4{margin:0 0 9px;font-size:9.5px;font-weight:600;
   text-transform:uppercase;letter-spacing:0.04em;color:var(--black);}
-.donut-row{display:flex;align-items:center;gap:14px;}
+/* La leyenda es una tabla que mide lo que mide su contenido: etiquetas en una
+   columna, porcentajes en otra, alineados a la derecha, con el filete sólo a lo
+   ancho de la leyenda. El grupo donut + leyenda se centra en la tarjeta.
+
+   Dos intentos anteriores fallaron. Con `flex:1` la leyenda se estiraba hasta el
+   borde y el porcentaje quedaba a 600px de su etiqueta. Con flex + max-content
+   funcionaba en el Chromium del generador pero no en todos los motores de PDF:
+   salía el porcentaje pegado al texto y el filete de lado a lado. Una <table> se
+   resuelve igual en todos. Ver criterio 81. */
+.donut-row{display:flex;align-items:center;justify-content:center;gap:22px;}
 .donut-row svg{flex-shrink:0;}
-.donut-legend{flex:1;min-width:0;font-size:8.8px;}
-.donut-legend-row{display:flex;justify-content:space-between;gap:8px;
-  line-height:1.45;padding:2.6px 0;color:var(--gray-d);font-weight:500;
+/* `flex:none`: la tabla nunca se achica por debajo de su contenido. */
+table.donut-legend{border-collapse:collapse;width:auto;font-size:8.8px;
+  flex:none;}
+.donut-legend-row td{padding:2.6px 0;line-height:1.45;vertical-align:middle;
   border-bottom:1px solid var(--hairline);}
-.donut-legend-row:last-child{border-bottom:none;}
+.donut-legend-row:last-child td{border-bottom:none;}
+.donut-legend-row .dl-lbl{color:var(--gray-d);font-weight:500;}
+.donut-legend-row .dl-val{text-align:right;padding-left:24px;color:var(--black);
+  font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap;}
 .donut-legend-row .dot{display:inline-block;width:7px;height:7px;
   border-radius:var(--r-full);margin-right:7px;vertical-align:middle;}
-.donut-legend-row span:last-child{color:var(--black);font-weight:600;
-  font-variant-numeric:tabular-nums;white-space:nowrap;}
 
 /* ---------- Barras horizontales (alternativa al donut) ---------- */
 .bars{display:flex;flex-direction:column;gap:7px;}
@@ -148,6 +164,18 @@ table.mc td.col-trailer,table.mc td.col-clase{white-space:nowrap;}
 .bar-track{height:6px;background:var(--gray);border-radius:var(--r-full);
   overflow:hidden;}
 .bar-fill{height:100%;border-radius:var(--r-full);}
+
+/* Serie con negativos: el cero va donde le toca según el rango y las barras
+   salen para los dos lados. Sin riel de fondo —no hay un 100% contra el cual
+   comparar— y con el cero marcado por una línea. Ver criterios 60 y 97. */
+.bars-cero .bar-track{position:relative;height:9px;background:transparent;
+  border-radius:0;overflow:visible;}
+.bars-cero .bar-eje{position:absolute;top:-3px;bottom:-3px;width:1px;
+  background:var(--gray-line);}
+.bars-cero .bar-fill{position:absolute;top:0;bottom:0;height:auto;
+  border-radius:2px;min-width:1px;}
+.bars-cero .bar-fill.pos{background:var(--pos-serie);}
+.bars-cero .bar-fill.neg{background:var(--neg);}
 
 /* ---------- Fichas de instrumento ---------- */
 .ficha{border:1px solid var(--gray-line);border-radius:var(--r-lg);
@@ -175,15 +203,15 @@ table.mc td.col-trailer,table.mc td.col-clase{white-space:nowrap;}
 .dato b{color:var(--black);font-weight:600;font-variant-numeric:tabular-nums;}
 
 /* ---------- Pasos numerados (forma de trabajo) ---------- */
-.pasos{display:grid;gap:12px;}
+.pasos{display:grid;gap:22px;}
 .paso{display:flex;gap:11px;align-items:flex-start;min-width:0;}
-.paso-num{flex-shrink:0;width:22px;height:22px;border-radius:var(--r-full);
+.paso-num{flex-shrink:0;width:24px;height:24px;border-radius:var(--r-full);
   background:var(--black);color:var(--white);font-size:9.5px;font-weight:600;
   display:flex;align-items:center;justify-content:center;line-height:1;}
 .paso-body{min-width:0;}
-.paso-body h5{margin:0 0 3px;font-size:10.5px;font-weight:600;
+.paso-body h5{margin:0 0 4px;font-size:12px;font-weight:600;
   letter-spacing:-0.005em;color:var(--black);line-height:1.3;}
-.paso-body p{margin:0;font-size:9.4px;line-height:1.5;color:var(--gray-d);
+.paso-body p{margin:0;font-size:10.5px;line-height:1.55;color:var(--gray-d);
   text-wrap:pretty;}
 
 /* ---------- Bloques de texto en columnas ---------- */
@@ -239,8 +267,8 @@ table.mc td.col-trailer,table.mc td.col-clase{white-space:nowrap;}
    las otras. Apilada debajo del gráfico, cada fila dispone del ancho completo
    de la tarjeta y todas miden lo mismo. Ver criterio 59. */
 .cart-wrap .donut-row{flex-direction:column;align-items:center;gap:12px;}
-.cart-wrap .donut-legend{width:100%;flex:none;}
-.cart-wrap .donut-legend-row > span:first-child{white-space:nowrap;}
+.cart-wrap table.donut-legend{width:100%;flex:none;}
+.cart-wrap .donut-legend-row .dl-lbl{white-space:nowrap;}
 
 /* Barra de peso dentro de la tabla. Un solo color: las barras comparan tamaños
    entre sí, no señalan bueno y malo — colorearlas agregaría un juicio que el
@@ -266,6 +294,10 @@ table.mc tr.total td.col-barra .tbar{display:none;}
    satura. El gris cierra el grupo y de paso le da respiro a una tabla larga. */
 table.mc tbody tr.subtotal td{background:var(--gray);border-bottom:none;
   font-weight:600;color:var(--black);padding-top:8px;padding-bottom:8px;}
+/* El signo pinta también en el subtotal. La regla de arriba fuerza negro con más
+   especificidad que `td.pos`/`td.neg`, y un gap a vender salía en negro. */
+table.mc tbody tr.subtotal td.pos{color:var(--pos);}
+table.mc tbody tr.subtotal td.neg{color:var(--neg);}
 table.mc tbody tr.subtotal td:first-child{border-radius:var(--r-sm) 0 0 var(--r-sm);}
 table.mc tbody tr.subtotal td:last-child{border-radius:0 var(--r-sm) var(--r-sm) 0;}
 /* La fila que abre el grupo siguiente no necesita filete: la banda ya separó. */
@@ -275,3 +307,49 @@ table.mc tbody tr.subtotal + tr.g-ini td{border-top:none;}
 /* La barra va a la derecha del porcentaje: primero el número, después su
    tamaño. Angosta, porque compara proporciones y no necesita recorrido. */
 table.mc td.col-barra{width:11%;padding-left:10px;padding-right:0;}
+
+/* ---------- Flujo de fondos ----------
+   Doce columnas iguales en grilla fija, con las alturas de las barras en
+   píxeles que calcula el generador: nada depende del ancho intrínseco, así que
+   se dibuja igual en cualquier motor. Renta en azul arriba, amortización en
+   navy abajo — ni verde ni naranja, que son colores con significado (criterio
+   60). Ver criterio 88. */
+.ff-card{border:1px solid var(--gray-line);border-radius:var(--r-lg);
+  padding:14px 16px 10px;}
+.ff-barras{display:grid;grid-template-columns:repeat(12,1fr);gap:8px;
+  align-items:end;border-bottom:1px solid var(--gray-line);}
+.ff-col{display:flex;flex-direction:column;align-items:stretch;min-width:0;}
+.ff-area{display:flex;flex-direction:column;justify-content:flex-end;
+  align-items:stretch;}
+.ff-cifra{display:block;text-align:center;font-size:7.8px;font-weight:600;
+  color:var(--black);font-variant-numeric:tabular-nums;margin-bottom:3px;
+  white-space:nowrap;}
+.ff-renta{background:var(--blue);border-radius:2px 2px 0 0;}
+.ff-amort{background:var(--navy);}
+.ff-mes{display:block;text-align:center;font-size:7.6px;color:var(--caption);
+  padding:5px 0 0;white-space:nowrap;}
+.ff-leyenda{display:flex;gap:16px;align-items:center;margin-top:9px;
+  font-size:8px;color:var(--gray-d);}
+.ff-leyenda i{display:inline-block;width:8px;height:8px;border-radius:2px;
+  margin-right:5px;vertical-align:middle;}
+.ff-leyenda .ff-moneda{margin-left:auto;color:var(--caption);}
+
+/* ---------- Columnas verticales con eje en cero ---------- */
+/* La serie por año que el equipo ya mira en su tablero: el tiempo de izquierda
+   a derecha y el signo como arriba o abajo de la línea. Los alto vienen
+   calculados en píxeles desde Python —igual que el flujo de fondos— porque un
+   alto en porcentaje depende de que el contenedor tenga altura resuelta, y en
+   una tarjeta flexible eso no siempre pasa. Ver criterio 97. */
+.cols-cero{width:100%;}
+.cc-grid{display:grid;gap:10px;position:relative;}
+.cc-col{position:relative;min-width:0;}
+.cc-barra{position:absolute;left:14%;right:14%;border-radius:2px;}
+.cc-barra.pos{background:var(--pos-serie);}
+.cc-barra.neg{background:var(--neg);}
+.cc-cifra{position:absolute;left:-6px;right:-6px;text-align:center;
+  font-size:7.8px;font-weight:600;color:var(--black);
+  font-variant-numeric:tabular-nums;white-space:nowrap;}
+.cc-eje{position:absolute;left:0;right:0;height:1px;background:var(--gray-line);}
+.cc-rot{display:grid;margin-top:5px;}
+.cc-rot span{text-align:center;font-size:7.6px;color:var(--caption);
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}

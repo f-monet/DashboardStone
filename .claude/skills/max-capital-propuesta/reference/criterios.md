@@ -21,7 +21,7 @@ Dólares"**, no "Max Renta Fija Dólares (Clase A)".
 suscripción). Al cliente no le agrega información y abre una pregunta que no
 hace falta contestar en una propuesta.
 
-*Origen:* revisión de Javier Lago, 27/08/2026.
+*Origen:* revisión del primer one-pager, 27/08/2026.
 
 ---
 
@@ -33,7 +33,7 @@ dice la columna de ponderación de la tabla, con menos precisión.
 *Por qué:* un gráfico tiene que mostrar algo que la tabla no muestra. Si es la
 misma información en otro formato, ocupa espacio sin agregar nada.
 
-*Origen:* revisión de Javier Lago, 27/08/2026.
+*Origen:* revisión del primer one-pager, 27/08/2026.
 
 ---
 
@@ -44,14 +44,14 @@ cartera es de una sola clase. Una propuesta 100% renta fija no necesita un
 gráfico que diga "renta fija 100%".
 
 El criterio general: antes de poner un gráfico, mirar si la distribución tiene
-dispersión real. Si no la tiene, el corte relevante es otro — en Javier Lago,
-por ejemplo, la clase de activo era uniforme pero la moneda era 50/50, y esa sí
+dispersión real. Si no la tiene, el corte relevante es otro — en el primer
+one-pager la clase de activo era uniforme pero la moneda era 50/50, y esa sí
 era la torta que valía.
 
 *Por qué:* un gráfico de una sola categoría no informa, y ocupa el lugar del
 corte que sí importaba.
 
-*Origen:* revisión de Javier Lago, 27/08/2026.
+*Origen:* revisión del primer one-pager, 27/08/2026.
 
 ---
 
@@ -67,7 +67,7 @@ los instrumentos son un capítulo propio con tarjetas y datos.
 *Implementado:* el campo `resumen` de cada ficha (una cláusula corta) se usa en
 el one-pager; `que_hace` (el texto largo) se usa en el deck.
 
-*Origen:* revisión de Javier Lago, 27/08/2026.
+*Origen:* revisión del primer one-pager, 27/08/2026.
 
 ---
 
@@ -97,16 +97,17 @@ Hay una distinción que sí importa:
 
 Cuando toda la cartera está en dólares, la propuesta lleva **renta anual
 esperada** y **capital proyectado a N años** capitalizando. Es el modelo que ya
-usan las propuestas del equipo: Latosinski muestra "Rendimiento anual esperado
-USD 25.500" y "Capital Proyectado a 5 años USD 328.867"; la cartera conservadora
-de banca privada muestra "USD 6.400" y "USD 136.367" a 5 años.
+usan las propuestas del equipo: una cartera en dólares muestra "Rendimiento
+anual esperado USD 25.500" y "Capital Proyectado a 5 años USD 328.867"; la
+cartera conservadora de banca privada muestra "USD 6.400" y "USD 136.367" a 5
+años.
 
 *Por qué:* proyectar a varios años solo tiene sentido en moneda dura. En pesos,
 capitalizar una tasa nominal produce un número grande que no dice nada, porque
 la inflación se come la diferencia — por eso una propuesta mixta o en pesos se
 queda en el rendimiento del período y no proyecta.
 
-*Cuándo NO:* carteras con tramo en pesos (como Javier Lago) o con horizonte
+*Cuándo NO:* carteras con un tramo en pesos o con horizonte
 menor a un par de años.
 
 *Origen:* indicación de Pablo, 27/08/2026.
@@ -199,7 +200,7 @@ este capítulo hace barato descubrirlo antes.
 *Implementado:* tipo `perfil`, con `rasgos` (etiqueta/valor, se leen como ficha
 de datos) y `notas` (párrafos).
 
-*Origen:* pedido de Pablo para Alejandro Vallejos, 28/08/2026.
+*Origen:* pedido de Pablo sobre la propuesta con proyección de retiro, 28/08/2026.
 
 ---
 
@@ -215,7 +216,7 @@ lo que efectivamente es.
 
 *Implementado:* tipo `proyeccion`, con `kpis` y `supuestos`.
 
-*Origen:* pedido de Pablo para Alejandro Vallejos, 28/08/2026.
+*Origen:* pedido de Pablo sobre la propuesta con proyección de retiro, 28/08/2026.
 
 ---
 
@@ -226,7 +227,7 @@ de los instrumentos que realmente se proponen. Si no coinciden, decirlo — y
 elegir a conciencia si se mantiene la proyección original (por consistencia con
 el anexo que se entrega) o se recalcula.
 
-*Caso Vallejos:* el anexo asumía bonos genéricos al 5,00%; la cartera propuesta
+*El caso:* el anexo asumía bonos genéricos al 5,00%; la cartera propuesta
 tiene renta fija al 6,84% ponderado (6,17% del fondo + 7,50% de las ONs). La
 propuesta proyecta **más** que el anexo: USD 633.458 contra USD 618.446 en USD
 de hoy. Se mantuvieron los números del anexo por consistencia entre los dos
@@ -245,7 +246,7 @@ chequear que los aportes nominales den el mismo total que el reporte. Si cierran
 los aportes, cualquier diferencia restante está en el camino de rendimiento y se
 puede despejar.
 
-*Origen:* verificación al armar Alejandro Vallejos, 28/08/2026.
+*Origen:* verificación al armar la propuesta con proyección de retiro, 28/08/2026.
 
 ---
 
@@ -311,7 +312,7 @@ ese total. Números inventados por el renderer, en una slide de cliente.
 *Cómo detectarlo:* si los porcentajes del gráfico no coinciden con los del texto
 de la misma propuesta, es esto.
 
-*Origen:* error encontrado al armar Fernando Rodriguez, 28/08/2026.
+*Origen:* error encontrado al armar el primer deck completo, 28/08/2026.
 
 ---
 
@@ -325,14 +326,14 @@ se venden** eso dice lo contrario de lo que pasa: van "Resultado realizado" y
 Se resuelve pasando `columnas` como objetos con `clave`, `titulo` y `align` en
 vez de sólo la clave.
 
-*Origen:* revisión al armar Fernando Rodriguez, 28/08/2026.
+*Origen:* revisión al armar el primer deck completo, 28/08/2026.
 
 ---
 
 ## 19. Escribir desde la mirada del cliente, no como ficha interna
 
 El capítulo de perfil describe al cliente, pero **lo lee el cliente**. No se
-escribe "Alejandro es especialista en…" —ya sabe su nombre y a qué se dedica—:
+escribe "Martín es especialista en…" —ya sabe su nombre y a qué se dedica—:
 se escribe en segunda persona, como devolución de lo conversado.
 
 Sirve igual como antecedente escrito de lo que se acordó; lo que cambia es el
@@ -365,7 +366,7 @@ cambia** — que también es una decisión y conviene que esté dicha.
 Los tramos marcados `"tentativo": true` se dibujan atenuados y punteados: son
 los que todavía no están decididos y no deben leerse como compromiso.
 
-*Caso Vallejos:* 60/40 fijo durante los seis años de aportes, y una revisión
+*El caso:* 60/40 fijo durante los seis años de aportes, y una revisión
 hacia 40/60 al llegar al retiro, dibujada como tentativa.
 
 *Origen:* pedido de Pablo, 28/08/2026.
@@ -414,32 +415,40 @@ Si dos clientes reciben una propuesta con el mismo vehículo, la descripción y
 los datos tienen que ser idénticos. Un cliente con -28,05% de caída máxima y
 otro con -36,2% para el mismo portfolio es un problema, no un matiz.
 
-*Qué pasaba:* actualicé la ficha de CEDEARs de ETFs en Vallejos con la
+*Qué pasaba:* se actualizó la ficha de CEDEARs de ETFs en una propuesta con la
 definición oficial nueva y el dato correcto, y quedó desincronizada con la de
-Rodriguez, que seguía con el texto viejo del PDF anterior.
+otra, que seguía con el texto viejo del PDF anterior.
 
 *Cómo evitarlo:* al cambiar la descripción de un instrumento, revisar qué otras
 propuestas lo usan. Con el tiempo conviene que las fichas vivan en un archivo
 compartido y las propuestas las referencien por nombre.
 
-*Origen:* detectado al actualizar Fernando Rodriguez, 28/08/2026.
+*Origen:* detectado al actualizar el primer deck completo, 28/08/2026.
 
 ---
 
-## 25. En la página de resumen, las cifras van abreviadas con M y K
+## 25. Toda tarjeta de KPI lleva las cifras abreviadas con M y K
 
-La primera página —la de KPIs que resume la propuesta— usa **M para millones y
-K para miles**: `USD 1,3M`, `+USD 450K`. El detalle completo va en las tablas,
-que es donde se audita.
+Cualquier tarjeta de KPI —la de la página de resumen y las del medio del deck—
+usa **M para millones y K para miles**: `USD 1,3M`, `+USD 450K`. También el
+rótulo de una barra que muestra una magnitud en moneda. El detalle completo va
+en las tablas, que es donde se audita.
 
-*Por qué:* la tarjeta de resumen se lee de un vistazo y desde lejos. "USD
-1.300.056" obliga a contar dígitos para saber de qué orden de magnitud se está
-hablando; "USD 1,3M" se entiende de una.
+*Por qué:* la tarjeta se lee de un vistazo y desde lejos. "USD 1.300.056" obliga
+a contar dígitos para saber de qué orden de magnitud se está hablando; "USD
+1,3M" se entiende de una. Eso vale igual en la primera página que en la séptima:
+lo que manda es el formato de la pieza, no dónde está.
 
 *Dónde no:* en las tablas de detalle y en el menú de instrumentos, donde el
 número exacto es el dato.
 
-*Origen:* indicación de Pablo, 28/08/2026.
+*Cómo se rompió:* el criterio decía *"en la página de resumen"* y por eso no se
+aplicó a una lámina de KPIs del medio de un deck de rebalanceo, hasta
+que Pablo lo pidió a mano. Una regla acotada a un lugar se lee como que afuera de
+ese lugar no rige.
+
+*Origen:* indicación de Pablo, 28/08/2026. Extendido a toda tarjeta el
+20/09/2026, con un deck de rebalanceo.
 
 ---
 
@@ -470,7 +479,24 @@ comparar las posiciones de sus partes antes de dar la slide por buena. Los
 desalineados de una o dos líneas no se ven mirando, y se ven todos juntos en la
 reunión.
 
-*Origen:* propuesta armada por un asesor del equipo, 28/08/2026.
+**Ahora lo mide el generador.** Al armar un deck compara, en cada fila de
+`.deltas` y `.kpi-grid`, a qué altura arranca el número dentro de cada tarjeta.
+Si difieren en más de 2px avisa por consola con el número de slide.
+
+*Cómo se volvió a romper (v1.3):* en el rebalanceo armado por otro asesor la tarjeta
+destacada de una fila de deltas tenía el número 18px más abajo que las otras dos,
+una raya navy a la izquierda y el contenido repartido a lo alto; la fila entera
+salió inflada y las tarjetas vecinas, vacías. No era un error de contenido: el
+recuadro de `perfil` que entró en la v1.3 se llamaba `.destacado` a secas y
+**chocó de nombre** con `.delta.destacado`, así que la tarjeta heredó su padding,
+su centrado vertical y su filete. Se renombró a `.perfil-destacado`.
+
+*La lección de oficio:* un nombre de clase genérico —`destacado`, `nota`,
+`caja`— se va a repetir en otro componente tarde o temprano. Los estilos nuevos
+llevan el nombre del componente como prefijo.
+
+*Origen:* propuesta armada por un asesor del equipo, 28/08/2026. Ampliado con el
+ese caso, 16/09/2026.
 
 ---
 
@@ -481,7 +507,7 @@ de servicio escrita en la propuesta. Antes de escribir que algo queda fuera,
 verificar si la casa efectivamente lo cubre.
 
 *Caso concreto:* Max Capital **sí provee cierto grado de asesoramiento
-impositivo**. La propuesta de Vallejos decía que los impuestos no estaban
+impositivo**. Una de las propuestas decía que los impuestos no estaban
 contemplados y que "siendo tu especialidad, es el primer ajuste que corresponde
 hacer" — le pasaba el tema al cliente en algo sensible que nosotros sí
 acompañamos. Quedó reescrito como: el anexo está antes de impuestos, definir el
@@ -511,7 +537,11 @@ el costo propio como si fuera una objeción.
 Esto **no es ocultar costos** —el dato sigue estando, completo y temprano—: es
 no repetirlo en tono de disculpa.
 
-*Origen:* corrección de Pablo, 28/08/2026.
+**Este criterio dice dónde van los costos cuando el asesor decidió incluirlos.
+No decide si se incluyen.** Si con el cliente no se habló del esquema de
+honorarios, antes de escribir una palabra sobre cobros vale el criterio 79.
+
+*Origen:* corrección de Pablo, 28/08/2026. Acotado el 16/09/2026.
 
 ---
 
@@ -663,7 +693,33 @@ d.scrollHeight > d.getBoundingClientRect().height  // true = recortado
 Hacerlo cada vez que cambie el texto legal, y también cada vez que cambie el
 layout del pie.
 
-*Origen:* detectado al cargar el disclaimer oficial, 28/08/2026.
+**Y tampoco se encima.** En el one-pager el texto legal va anclado al pie de una
+hoja de alto fijo. Si el contenido crece —más filas, tres gráficos, la nota de
+instrumentos—, pasa por debajo del disclaimer y queda tapado.
+
+*Qué hace el generador, en este orden,* midiendo la hoja ya maquetada:
+
+1. ajusta el lugar reservado al pie al alto real del texto legal;
+2. si no entra, comprime un paso más (`.tight`, después `.tighter`);
+3. si ni con la compresión máxima entra, **pasa el disclaimer entero a una
+   segunda hoja, solo**, y vuelve a la compresión original: con el lugar
+   liberado suele sobrar.
+
+Rompe la idea de una página, y está bien: en la segunda hoja no hay nada más que
+el texto legal, así que no se lee como una propuesta de dos páginas. Lo que no
+puede pasar nunca es un disclaimer encimado. Cuando pasa a la segunda hoja, lo
+dice por consola; si aun así el contenido pisa los datos de contacto, avisa
+DESBORDE y hay que sacar contenido — ver criterio 62.
+
+*Cómo se rompió:* un one-pager con dos gráficos —"Por clase de activo" y "Por
+nivel de riesgo"— quedó con el disclaimer tapando la mitad de los donuts. Al
+reproducirlo apareció que **el propio ejemplo de la skill ya tenía el defecto**:
+la nota de instrumentos quedaba 43px debajo del texto legal desde que el
+disclaimer aprobado por legales en la v1.3 creció. La compresión elegía la clase
+contando filas, no midiendo, y no lo veía.
+
+*Origen:* detectado al cargar el disclaimer oficial, 28/08/2026. Ampliado con el
+caso del one-pager encimado, corrección de Pablo, 16/09/2026.
 
 
 ---
@@ -709,8 +765,8 @@ Quedan **fuera**, deliberadamente:
 soberano, provincial, ONs corporativas y equity. Con las ONs adentro, el
 indicador se movía por razones que no tenían que ver con el riesgo país, y la
 propuesta parecía reducir una exposición que en realidad se mantenía a
-propósito. Con la definición correcta, el número real de la operación de
-Rodriguez es **47,0% → 12,9%**.
+propósito. Con la definición correcta, el número real de ese
+reposicionamiento es **47,0% → 12,9%**.
 
 *Y siempre declarar la definición al pie del gráfico.* Un porcentaje de "riesgo
 argentino" sin decir qué incluye es un número que cada lector interpreta
@@ -747,8 +803,8 @@ En una propuesta de reposicionamiento, el bloque "mantener" debe cubrir **todo**
 lo que no se vende. Si el cliente suma lo que ve y no le da el total de su
 cartera, la propuesta pierde credibilidad justo donde más la necesita.
 
-*Qué pasaba:* la propuesta de Rodriguez listaba en "mantener" las ONs, el equity
-argentino, la nota estructurada, Santa Fe y TMVE8 — USD 552.418. Pero lo que no
+*Qué pasaba:* una propuesta de reposicionamiento listaba en "mantener" las ONs,
+el equity argentino, la nota estructurada y dos bonos — USD 552.418. Pero lo que no
 se vendía eran USD 774.927. Faltaba un bloque entero: **USD 213.828 de equity
 internacional (MELI, SPY, DIA, PBR, AMD, TSM), el 16,4% de la cartera**, el
 mayor bloque de renta variable que quedaba en pie y no figuraba en ninguna
@@ -823,7 +879,7 @@ número que no cierra. **Ese hallazgo se le dice al asesor, en el chat, y ahí
 termina.** No entra a la propuesta: ni como columna, ni como nota al pie, ni
 como "tema de la próxima conversación".
 
-*Qué pasó:* en la propuesta de Rodriguez metí una columna titulada **"Lo que
+*Qué pasó:* en una propuesta de reposicionamiento metí una columna titulada **"Lo que
 esta propuesta no resuelve"**, contándole al cliente que tenía 12,3% en YPF y
 12,2% en Vista, que eran concentraciones que no se veían en su estado de cuenta,
 y que era el tema de la próxima conversación. El análisis era correcto. La
@@ -884,11 +940,11 @@ otra propuesta — ver criterio 34.
 
 ---
 
-## 44. En banca privada se propone fee based, no por transacción
+## 44. En banca privada la cartera lleva vehículos administrados
 
-Una propuesta para persona física va bajo **esquema de honorario de
-administración**. Si la cartera que trae el asesor no tiene ningún vehículo
-administrado, planteáselo antes de escribirla.
+Una propuesta para persona física se arma **con vehículos administrados**, no
+sobre operaciones sueltas. Si la cartera que trae el asesor no tiene ninguno,
+planteáselo antes de escribirla.
 
 *Por qué:* la comodidad empuja al modelo de trading — es más rápido proponer lo
 que el cliente ya opera. Para **empresas** ese modelo tiene sentido y se evalúa
@@ -897,14 +953,19 @@ operar en vez de por administrar, encarece cada rebalanceo y convierte al asesor
 en ejecutor.
 
 *Los tres que van siempre* (salvo que el caso lo desaconseje): FCI Max Renta
-Fija Dólares, cartera de CEDEARs de ETFs, y notas estructuradas para inversores
-desde USD 250.000. El detalle completo está en [`oferta.md`](oferta.md).
+Fija Dólares, Cuenta Administrada CEDEARs de ETFs, y notas estructuradas para
+inversores desde USD 250.000. El detalle completo está en [`oferta.md`](oferta.md).
 
 *Planteáselo, no lo cambies.* La cartera la decide el asesor — ver criterio 42.
-Lo que corresponde es decirle que la propuesta quedó sin componente
+Lo que corresponde es decirle, en el chat, que la propuesta quedó sin componente
 administrado y por qué eso importa.
 
-*Origen:* política comercial definida por Pablo, 29/08/2026.
+**Esta regla decide qué va en la cartera, no qué dice la propuesta.** Todo el
+razonamiento de arriba es para el asesor. Frente al cliente, del esquema de
+comisiones no se habla salvo confirmación expresa — ver criterio 79.
+
+*Origen:* política comercial definida por Pablo, 29/08/2026. Acotada el
+16/09/2026, cuando la regla se filtró a la portada de una propuesta.
 
 ---
 
@@ -932,7 +993,7 @@ mejor que lo vea en la propuesta y no cuando revise el fondo por su cuenta.
 
 *Implementado:* el capítulo `distribuciones` acepta `kpis` de encabezado.
 
-*Origen:* propuesta de Fernando Rodriguez, 29/08/2026.
+*Origen:* el primer deck completo, 29/08/2026.
 
 
 ---
@@ -1146,13 +1207,13 @@ la proyección tiene para proyectar.
 
 Cuando la propuesta sólo reordena una cartera que ya existe y no entra nada, la
 proyección no tiene materia prima y el argumento es cómo queda la cartera. Fue el
-caso de Fernando, 30/08/2026.
+caso del primer deck completo, 30/08/2026.
 
 *Por qué está escrito así:* antes decía "no va en un reposicionamiento", y esa
-excepción se aplicó mal en Jimena Laino (06/09/2026). El caso se clasificó como
+excepción se aplicó mal en el deck de canje (06/09/2026). El caso se clasificó como
 reposicionamiento por la palabra —había una cartera vigente que se reordenaba— y
-se salteó la proyección, sin mirar que ese año había entrado USD 44.470 en
-aportes y estaban entrando otros USD 25.000. La pidió Pablo varias rondas después.
+se salteó la proyección, sin mirar que ese año habían entrado aportes y estaban
+entrando más. La pidió Pablo varias rondas después.
 Una regla con un "salvo que" invita a resolverla mirando la etiqueta del caso en
 vez del hecho que importa.
 
@@ -1172,7 +1233,7 @@ es una punta que se escapa del anillo, con forma de flecha. No es antialiasing
 ni un gajo demasiado chico: es geometría mal planteada, y aparece más cuanto más
 chico es el último gajo.
 
-*Cómo se rompió:* en la propuesta de Fernando, el donut "Perfil de la cartera
+*Cómo se rompió:* en el primer deck completo, el donut "Perfil de la cartera
 hoy" tenía Cash en 0,7%. Ese gajo salió impreso como un zigzag azul claro que
 atravesaba el borde del anillo. Pasó la validación, pasó la generación del PDF y
 lo encontró el asesor mirando la lámina.
@@ -1186,7 +1247,7 @@ los bordes entre gajos tienen que ser radios rectos.
 dibuja nada. Un gajo único va como `<circle>` completo — está contemplado en el
 código.
 
-*Origen:* lo detectó Pablo en la propuesta de Fernando, 30/08/2026.
+*Origen:* lo detectó Pablo en el primer deck completo, 30/08/2026.
 
 ---
 
@@ -1248,7 +1309,7 @@ documento no carga Inter y las medidas cambian—. Con `pypdf`, `extract_text`
 acepta un `visitor_text` que entrega la matriz de texto: `tm[5]` es la línea de
 base. La del dato y la del título tienen que dar el mismo número.
 
-*Origen:* lo detectó Pablo en la propuesta de Fernando, 30/08/2026.
+*Origen:* lo detectó Pablo en el primer deck completo, 30/08/2026.
 
 ---
 
@@ -1272,7 +1333,7 @@ se justifica.
 entre 99 y 101, y en ese caso imprime el valor tal cual. La geometría del gajo sí
 se normaliza — esa diferencia no se ve.
 
-*Origen:* lo detectó Pablo en la propuesta de Fernando, 30/08/2026.
+*Origen:* lo detectó Pablo en el primer deck completo, 30/08/2026.
 
 ---
 
@@ -1311,7 +1372,7 @@ real los redondeos no se mueven, es resto mayor.
 *Cómo se verifica:* `--validar` lo controla solo y avisa. Compara las filas
 contra la fila de total, tanto en porcentaje como en monto.
 
-*Cómo se rompió:* en la cartera final de Fernando la columna sumaba 100,2% con
+*Cómo se rompió:* en una cartera final la columna sumaba 100,2% con
 la fila de total diciendo 100%, y las valuaciones sumaban USD 1.300.052 contra
 un total declarado de USD 1.300.056. Había una nota al pie que lo explicaba;
 se sacó la nota —bien— pero no se arregló el número, que era lo que había que
@@ -1348,7 +1409,7 @@ nombre partido. Medir las líneas de base no sirve en estas tablas: las celdas
 comparten la matriz de texto y el desplazamiento de fila viaja en la matriz de
 transformación.
 
-*Origen:* lo detectó Pablo en la propuesta de Fernando, 30/08/2026.
+*Origen:* lo detectó Pablo en el primer deck completo, 30/08/2026.
 
 ---
 
@@ -1359,7 +1420,7 @@ pista gris de fondo.**
 
 *Por qué:* una pista se lee como "lo que falta". Eso sólo es cierto cuando la
 pista llena vale 100%. Si escala contra la fila más pesada, la pista completa
-equivale a esa fila —18,9% en la cartera de Fernando— y entonces no representa
+equivale a esa fila —18,9% en el caso que lo destapó— y entonces no representa
 nada, pero el ojo igual la interpreta como el total.
 
 *Cómo se rompió:* la fila de Cash, con 0,7%, quedó como un punto azul contra una
@@ -1379,7 +1440,7 @@ distribución por calificación crediticia el verde le tocó a "CCC y menor" —
 peor rating pintado con el color de "bien". Esos tres colores quedan reservados
 para donde sí significan: pills de riesgo, comprar/vender, variaciones.
 
-*Origen:* lo detectó Pablo en la propuesta de Fernando, 30/08/2026.
+*Origen:* lo detectó Pablo en el primer deck completo, 30/08/2026.
 
 ---
 
@@ -1463,7 +1524,7 @@ una segunda fila, corrió los gráficos hacia abajo y la distribución por
 calificación terminó encimada con la nota al pie. Se generó el PDF sin que nada
 avisara.
 
-*Origen:* lo detectó Pablo en la propuesta de Fernando, 30/08/2026.
+*Origen:* lo detectó Pablo en el primer deck completo, 30/08/2026.
 
 ---
 
@@ -1486,7 +1547,7 @@ con qué.
 razones, una lámina con una columna por movimiento. La razón nunca va como quinta
 columna de la tabla: el texto largo parte las filas en dos y rompe el criterio 59.
 
-*De dónde salió:* en Jimena Laino se armó con comprar/vender, Pablo pidió
+*De dónde salió:* en el deck de canje se armó con comprar/vender, Pablo pidió
 emparejarlo, y después hubo que recuperar los porqués en una slide aparte. Salió
 bien y a mano; el catálogo no tenía el formato. 06/09/2026.
 
@@ -1508,7 +1569,7 @@ distintos, separadas por dos páginas y con el mismo rótulo.
 contra "Resultado acumulado"), o dejar una sola. Y si la diferencia importa,
 pedirle al asesor los datos que faltan para reconciliarlas antes de emitir.
 
-*Origen:* detectado en Jimena Laino, 06/09/2026.
+*Origen:* detectado en el deck de canje, 06/09/2026.
 
 ---
 
@@ -1531,7 +1592,7 @@ un casillero entero del mandato sin cubrir.
 según el mercado donde liste. Y **si el instrumento está disponible en la
 plataforma es dato de la casa**, no se deduce: ver criterio 34.
 
-*Origen:* Jimena Laino, 06/09/2026.
+*Origen:* el deck de canje, 06/09/2026.
 
 ---
 
@@ -1550,7 +1611,7 @@ generación del PDF y lo encontró Pablo mirando la lámina.
 armada tiene que tocar sólo la parte que corresponde. Si el `replace` está fuera
 del `f-string` del número, está mal.
 
-*Origen:* Jimena Laino, 06/09/2026.
+*Origen:* el deck de canje, 06/09/2026.
 
 ---
 
@@ -1569,7 +1630,7 @@ tiene puesto el ojo, y es lo primero que necesita para leer el resto de la slide
 contra *post aporte* se lee sin pensar. Elegí un par y sostenelo.
 
 *Por qué importa más de lo que parece:* con dos carteras cambia la base de los
-porcentajes. En Jimena Laino el oro pasó de **5,4% a 4,3% sin que se vendiera un
+porcentajes. En el deck de canje el oro pasó de **5,4% a 4,3% sin que se vendiera un
 solo gramo** — la posición quedó igual en USD 5.207 y lo que creció fue el
 denominador, de 95.547 a 120.547. Un cliente que compara las dos cifras sin saber
 que son de carteras distintas lee una venta que nunca ocurrió.
@@ -1582,3 +1643,981 @@ otra sobre la resultante no son comparables aunque se llamen igual — ver crite
 indicarlas también porque es un lío si no entender". Quedaron como "Cómo está
 compuesta, pre aporte", "El detalle, pre aporte", "Cómo queda la cartera, post
 aporte" y "El detalle, post aporte".
+
+---
+
+## 68. Un remate por deck, no uno por slide
+
+Una frase de cierre debajo del contenido —en bajada, más chica, con aire
+alrededor— es un recurso fuerte. **Usado una vez por deck golpea; usado en cada
+slide es la firma de un texto escrito por una máquina.**
+
+El primer borrador de la propuesta de servicio tenía doce slides y doce remates: "Para
+nosotros fue la frase más importante de la reunión", "El fee lo ves todos los
+meses. Esto no lo ves nunca. Por eso pesa más", "Un servicio flojo durante un año
+es una molestia. Durante veinticinco, es un costo que se acumula solo". Cada una
+funciona sola. Las doce juntas se leen como un tic.
+
+*Cómo se reconoce:* si toda slide termina con una frase que no aporta un dato y
+existe para dejar resonando algo, sobra en casi todas. Dejá la del capítulo que
+más pesa y borrá el resto.
+
+*Lo mismo con la antítesis y la tríada.* "Con los números, sin adjetivos", "Sin
+fricción, sin pleitos, y sin que nadie tenga que adivinar qué querías". Una por
+documento pasa; en cadena, delata.
+
+*Qué sí queda:* el campo `remate` existe para esto y es uno por deck. Si el
+capítulo cierra con un dato o una pregunta que el asesor va a hacer en la
+reunión, va ahí. Si es sólo una frase linda, no va.
+
+*Origen:* Pablo, 09/09/2026, sobre el borrador de la propuesta de servicio: "está MUY AI".
+
+---
+
+## 69. Nada de generalizar sobre el cliente
+
+No se le explica al cliente cómo es él, ni qué se pregunta la gente como él.
+Prohibidas las construcciones del tipo:
+
+- "Las dos preguntas que se hace **todo el que se retiró a tu nivel**"
+- "Hay algo que sabemos de **la gente que dirigió empresas**"
+- "Con los ex CEO **nos pasa siempre lo mismo**"
+- "**No importa cuántos ceros** tenga la cuenta"
+
+*Por qué está mal:* la propuesta se apoya en lo que el cliente dijo en la
+reunión, que es información propia y verificable. Una generalización sobre su
+segmento es lo contrario: le informa que lo estamos leyendo desde un molde. A un
+cliente sofisticado le suena a manual de ventas, y con razón.
+
+*Qué sí se hace:* decir la misma cosa como observación de su caso. "Tenés por
+delante veinte o treinta años de cartera" dice lo mismo que "todo el que se
+retiró a tu nivel se pregunta si va a durar", sin el molde.
+
+*Origen:* la propuesta de servicio, 09/09/2026. Es pariente del criterio 19 —escribir desde
+la mirada del cliente— y del 46.
+
+---
+
+## 70. Una cita del cliente va una vez
+
+Si la propuesta cita algo que el cliente dijo, aparece **en un solo lugar**. La
+segunda vez deja de ser un dato de la reunión y pasa a ser un recurso retórico.
+
+En la propuesta de servicio, "Para mí el servicio es muy importante" abría la slide de
+perfil y volvía tres slides después como título de otra. La lección de sus años
+en UBS —un costo chico se come una parte grande del interés— también estaba dos
+veces. Repetir lo que alguien dijo hace que suene a que lo estamos usando.
+
+*Dónde ponerla:* donde más pese. Normalmente al pie del capítulo de perfil, que
+es el que devuelve lo escuchado.
+
+*Origen:* la propuesta de servicio, 09/09/2026.
+
+---
+
+## 71. Un capítulo no repite lo que dijo el anterior
+
+Cada slide tiene que agregar algo. **Si una slide vuelve a enumerar lo que el
+lector leyó dos slides antes, se borra**, aunque el formato sea distinto.
+
+El caso: el deck listaba los cuatro compromisos de servicio en una slide, y tres
+slides después una tabla "lo que dijiste → lo que nos comprometemos" los volvía a
+listar palabra por palabra, con la queja del cliente a la izquierda. El recurso
+es bueno; el problema es que no traía nada nuevo.
+
+*Cómo se detecta:* leé sólo los títulos y los bold del deck de corrido. Si dos
+capítulos dicen lo mismo con otras palabras, uno sobra.
+
+*Origen:* la propuesta de servicio, 09/09/2026. Es la razón por la que ese deck bajó de doce
+páginas a ocho sin perder contenido.
+
+---
+
+## 72. Un descuento sin causa se lee como precio inflado
+
+Cuando la propuesta muestra un fee bonificado al lado del estándar, **tiene que
+decir por qué existe la bonificación**. Sin el motivo, el cliente no lee "me
+están haciendo un precio": lee "el precio de lista estaba de más".
+
+```
+✅  Nos ajustamos sobre el fee estándar para que la estructura te resulte más
+    eficiente, y para arrancar una relación de largo plazo.
+❌  (la tabla sola, con una columna "fee con bonificación")
+```
+
+El motivo es una decisión comercial y se escribe en positivo: qué gana el cliente
+y qué apuesta hace la casa. Nunca en disculpa, ni enumerando costos a la
+defensiva antes de mostrar el número — eso es el criterio 47.
+
+*Tampoco va lo que paga hoy en otro lado.* Traer el precio del competidor al
+frente, justo antes del propio, invita a la comparación que la propuesta todavía
+no ganó.
+
+*Origen:* Pablo, 09/09/2026: "¿por qué me bajé los lompas si no?".
+
+---
+
+## 73. La portada la encabeza el cliente, no el tipo de documento
+
+El nombre del cliente es el titular de la portada, en cuerpo grande. "Propuesta
+de Inversión" baja a segunda línea. Arriba, la volanta "Preparado para".
+
+*Por qué:* lo primero que tiene que leerse es **para quién está hecho esto**. El
+tipo de documento el cliente ya lo sabe: se lo dijimos al mandárselo. Una portada
+que grita "Propuesta de Inversión" se parece a todas las propuestas de
+inversión; una que dice su nombre en 72px, no.
+
+El generador elige el cuerpo según el largo del nombre —de 72px hasta 36px— así
+que un nombre institucional largo entra igual en una línea. Al pie va la leyenda
+de confidencialidad del `CONFIG`.
+
+*Sin bloque de contacto:* una pieza genérica —una que usan varios asesores con
+varios clientes— no lleva "Presentado por". Ahí el pie queda pegado a la
+izquierda, y la fecha y la línea de confidencialidad se alinean por ese mismo eje.
+Antes la fecha iba alineada a la derecha de su propio bloque y quedaba colgada,
+sin nada contra qué alinearse.
+
+*Origen:* referencia visual de Pablo, 09/09/2026. La portada sin contacto salió de
+la pieza del plan de aportes, 20/09/2026.
+
+---
+
+## 74. El logo va en todas las slides, y esa esquina es de la marca
+
+El logotipo va **arriba a la derecha en todas las slides**, siempre en el mismo
+punto: `top:34px; right:32px`. Variante positiva sobre fondo claro, negativa
+sobre fondo oscuro. Es la extensión del criterio 16.
+
+**El punto es que no se mueva.** Dos slides seguidas con el logo desplazado
+cuatro píxeles se nota aunque nadie sepa decir qué le pasa. Si un tipo de slide
+necesita un logo distinto, cambia el tamaño, nunca el ancla.
+
+*Consecuencia:* esa esquina es de la marca y de nadie más. Lo que antes vivía
+ahí —la pill de nivel de riesgo, el monto destacado— va al renglón de encabezado,
+alineado a la derecha, junto al número de slide y el nombre del cliente. La regla
+es: **la marca en la esquina, los metadatos en el renglón.**
+
+*Origen:* Pablo, 09/09/2026: "inadmisible que el logo de Max baile entre las
+últimas dos slides".
+
+---
+
+## 75. Una tabla de pocas columnas no se estira al ancho de la slide
+
+Con dos o tres columnas y pocas filas, el ancho completo separa tanto las celdas
+que la fila deja de leerse como una unidad: el ojo pierde el renglón entre el
+concepto y su número. **Esas tablas se angostan y suben de cuerpo.**
+
+El generador lo aplica solo: hasta 3 columnas y 6 filas, la tabla va a 660px y de
+9,4px pasa a 12,5px. No hay campo que tocar.
+
+*Es lo contrario de lo que pide una tabla de cartera*, donde hay muchas columnas
+y el ancho completo es lo que hace que entren. Por eso el umbral.
+
+*Origen:* Pablo sobre la tabla de advisory fee de la propuesta de servicio, 09/09/2026:
+"agrandale la letra y que sea menos ancha porque queda mucho aire al pedo".
+
+---
+
+## 76. Un recuadro destaca dos cosas, no cuatro
+
+El recuadro gris con filete —`destacado` en el capítulo `perfil`— existe para que
+el cliente vea **una o dos cosas antes que el resto de la slide**. Con cuatro
+ítems adentro deja de destacar: es una lista más, con fondo gris.
+
+En la propuesta de servicio los innegociables eran cuatro: nada más de riesgo argentino,
+clases institucionales, Pershing y poder operar él. Entraron dos al recuadro —los
+dos límites de fondo— y los otros dos bajaron a la ficha como un rasgo más, "Cómo
+operás", porque describen la forma del mandato y no un límite.
+
+*El criterio para elegir:* al recuadro va lo que, si se incumple, mata la
+operación. El resto es dato.
+
+*Qué va adentro son reglas del cliente*, no observaciones de la casa. Si el ítem
+es una creencia suya ("en renta fija el costo importa"), se escribe como la regla
+que se desprende de ella ("El costo, en renta fija").
+
+*Origen:* Pablo, 09/09/2026.
+
+---
+
+## 77. No se corre el generador contra un cliente con propuesta enviada
+
+Ni para regenerar, ni para probar, ni con salida al scratchpad. **Para verificar
+un cambio de diseño se arma un JSON sintético**, que además es más rápido y
+prueba mejor: se le ponen a mano los casos raros que ninguna propuesta real
+tiene.
+
+El caso: para confirmar que mover el logo no rompía nada, se corrió el generador
+sobre los JSON de cuatro clientes con propuesta enviada. No se escribió ningún
+archivo de esas carpetas y estuvo mal igual — la regla no es "no los rompas", es
+"no los toques". El JSON sintético que se armó después, con pill de riesgo y
+monto destacado, probó el caso que ninguna propuesta viva ejercitaba.
+
+*Por qué la regla es tan dura:* el asesor revisa y aprueba antes de que algo
+llegue al cliente. Un archivo que cambia solo se saltea ese control, y frente al
+cliente la única referencia válida es lo que él recibió.
+
+*Origen:* corrección de Pablo, 09/09/2026. Ver también el criterio 78.
+
+---
+
+## 78. Un cambio de la skill que afecta propuestas enviadas se avisa en el momento
+
+Los PDF ya enviados quedan congelados en disco, pero **la fuente de la que
+salieron se mueve con cada cambio de la skill**. Después de tocar la portada, el
+logo y el encabezado, regenerar una propuesta vieja produce un documento distinto del que el
+cliente tiene en la mano.
+
+Eso hay que decirlo **cuando se hace el cambio**, no al final. El asesor decide
+qué hacer con esa diferencia: puede no importarle, o puede ser motivo para
+versionar antes de seguir.
+
+**Y no es sólo diseño.** El 09/09/2026 legales corrigió la leyenda regulatoria de
+"AN Propio" a "AN Integral": las tres propuestas ya enviadas describen mal la
+licencia de la casa. Un cambio en el `CONFIG` legal es siempre un aviso, porque
+deja de ser una cuestión de herramienta.
+
+*Origen:* corrección de Pablo, 09/09/2026.
+
+---
+
+## 79. El esquema de comisiones no se nombra sin confirmación del asesor
+
+**Nada sobre el esquema de cobro entra a la propuesta si el asesor no confirmó,
+expresamente, que con este cliente ese tema ya se habló.** Ni "fee based", ni
+"honorario de administración", ni "sin comisión por operación", ni "primer paso
+hacia otro esquema". Ni en la portada, ni en la razón de una compra, ni en un
+texto de cierre.
+
+Se pregunta al arrancar, en el paso 0, igual que quiénes firman. Si la respuesta
+no es un sí claro, el tema no existe para el documento.
+
+*Por qué:* con muchos clientes el esquema de comisiones no se conversa, y no
+hace falta. Se puede proponer un producto administrado —una cuenta administrada
+es exactamente eso— **por el lado del producto**: qué hace, cómo diversifica,
+quién lo gestiona, cómo le fue. Es una forma indirecta de llegar al mismo lugar,
+y es la correcta. Un documento que plantea el cambio de esquema por su cuenta le
+abre al asesor una conversación que él no eligió tener, y encima por escrito.
+
+*Qué pasaba:* la skill decía, como política comercial, "empujá hacia fee based" y
+"así hay que proponerlos", y ofrecía el argumento de cuentas administradas "tal
+cual" para la propuesta. No distinguía entre la regla que decide qué productos
+van y el mensaje al cliente, y la política interna terminó escrita en el
+documento.
+
+*Cómo se rompió:* el rebalanceo armado por otro asesor salió con este
+subtítulo de portada:
+
+> Un primer paso hacia el esquema de honorario de administración.
+
+Y la razón de compra de la cuenta administrada decía "primer paso hacia el
+esquema de honorario de administración: diversificación global, sin comisión por
+operación". La misma idea contada desde el producto: *"Diversificación global en
+una cartera de ETFs gestionada activamente."*
+
+*Origen:* corrección de Pablo sobre un rebalanceo armado por otro asesor del
+equipo con la skill, 16/09/2026.
+
+---
+
+## 80. La posición actual se muestra por clase de activo y por tipo de riesgo
+
+Cuando la propuesta muestra la cartera vigente del cliente, lleva **dos gráficos
+lado a lado**: la distribución por **clase de activo** y la distribución por
+**tipo de riesgo**. Con las mismas categorías que usa su reporte de posición.
+
+*Por qué dos:* cada una contesta otra pregunta. La clase de activo dice cuánto es
+renta fija, cuánto renta variable, cuánto estructurado. El tipo de riesgo dice
+**a qué está expuesto**: ON corporativa, soberano, provincial, equity argentino,
+equity internacional, oro. Dos carteras con 60% de renta fija pueden tener
+riesgos que no se parecen en nada.
+
+*Por qué las categorías del reporte:* el cliente ya las ve todos los meses. Si la
+propuesta usa otras, tiene que traducir, y cuando algo no coincide lo que piensa
+es que un papel está mal. Ver criterio 64.
+
+*Cómo se arma:* un capítulo `distribuciones` con los dos gráficos en `graficos`,
+y si hacen falta, los números del reporte —aportes, resultado, valuación— como
+`kpis` arriba. **No** un solo gráfico por activo en una lámina, la clase de
+activo como tabla en otra y la custodia en una tercera: tres láminas flacas donde
+entra una buena. La custodia rara vez es información para el cliente; si el
+asesor la pide, que vaya como nota.
+
+*Cómo se rompió:* la posición actual ocupaba tres láminas —un donut por
+activo, una tabla por clase de activo, una tabla por custodia—, cada una casi
+vacía, y nunca mostraba el tipo de riesgo.
+
+*Origen:* corrección de Pablo sobre el rebalanceo de otro asesor, 16/09/2026.
+
+---
+
+## 81. La leyenda es una tabla, y el recuadro rodea el gráfico
+
+Tres reglas para todo donut, en el deck y en el one-pager:
+
+**Los porcentajes van en columna, alineados a la derecha.** No a continuación de
+cada etiqueta, a distinta altura horizontal según lo que mida el texto.
+
+**Esa columna queda cerca de las etiquetas.** Ni del otro lado de la tarjeta ni
+pegada: la etiqueta más larga y su porcentaje llevan un aire fijo entre medio.
+
+**El recuadro rodea el gráfico, no aire.** Un gráfico solo ocupa media fila, igual
+que las tarjetas del criterio 85: la pieza conserva su tamaño y el sobrante queda
+a la derecha. A ancho completo, un donut con su leyenda ocupa un tercio del
+recuadro y el resto es vacío enmarcado.
+
+*Cómo está hecho:* la leyenda es una `<table>` —etiqueta en una columna,
+porcentaje en otra con `text-align:right`— que mide lo que su contenido.
+
+*Por qué una tabla:* hubo dos intentos antes. Con `flex:1` la leyenda se estiraba
+hasta el borde y el porcentaje quedaba a 576px de su etiqueta. Con flex y
+`max-content` salía bien en el Chromium del generador, pero esa propuesta se armó
+en un entorno donde eso no se resolvió igual: el porcentaje quedó pegado
+al texto y el filete cruzó la tarjeta de lado a lado. Una tabla se dibuja igual
+en cualquier motor.
+
+*Ojo con los atajos de padding:* la compresión máxima del one-pager tenía
+`padding:1.8px 0` sobre las celdas de la leyenda. Ese atajo también pone en cero
+el margen izquierdo de la columna de porcentajes: salían "Estructurados10,0%".
+En reglas que achican una tabla, tocar sólo `padding-top` y `padding-bottom`.
+
+*Cómo se verifica:* lo mide el generador, en el deck y en el one-pager. Avisa si
+la columna de porcentajes quedó a más de 60px de las etiquetas, si quedó pegada
+(menos de 8px), si los porcentajes no están alineados a la derecha, y si el
+gráfico ocupa menos del 55% del ancho de su recuadro.
+
+*Cómo se rompió:* lámina "Posición actual" del rebalanceo de otro asesor, dos veces —
+la segunda con la leyenda ya corregida en la v1.4, cuando Pablo la volvió a
+generar—.
+
+*Origen:* correcciones de Pablo, 16/09/2026.
+
+---
+
+## 82. Los productos se nombran con su nombre, y un paréntesis no se parte
+
+**Nombre oficial, completo, en todos lados.** La cuenta administrada de CEDEARs
+de ETFs es **"Cuenta Administrada CEDEARs de ETFs"** — en fichas, tablas y
+columnas de comprar/vender. No "Cartera CEDEARs de ETFs (cuenta administrada)".
+El detalle de nombres está en [`oferta.md`](oferta.md).
+
+**Y un paréntesis corto nunca queda partido entre dos renglones.** "(cuenta /
+administrada)" se lee como un error de maquetación, no como una aclaración.
+
+*Cómo:* el generador convierte en no separables los espacios de todo paréntesis
+de hasta 30 caracteres: si no entra, baja entero al renglón siguiente. Los más
+largos sí pueden partir, porque forzarlos a una tira desbordaría la columna.
+Pero la mejor solución sigue siendo no necesitar el paréntesis: un nombre que se
+explica con una aclaración es un nombre que todavía no se eligió.
+
+*Cómo se rompió:* en la columna "Comprar" de ese mismo rebalanceo el ítem salió
+"Cartera CEDEARs de ETFs (cuenta" en un renglón y "administrada)" en el otro.
+
+*Origen:* corrección de Pablo, 16/09/2026.
+
+---
+
+## 83. Un producto nuevo se presenta con su track record
+
+**Cuando la propuesta suma un producto que el cliente no tiene, va una lámina con
+cómo le fue**, además de lo que hace. Objetivo y estrategia describen; los números
+convencen.
+
+*Qué incluye:* los datos del fact sheet vigente — rendimiento anualizado en las
+ventanas que el asesor elija, volatilidad, caída máxima y tiempo de recuperación,
+y los retornos por año calendario si el fact sheet los trae. Se arma con un
+capítulo `distribuciones` con `kpis` arriba y la composición abajo, o con `kpis`
+más una `tabla` de retornos anuales.
+
+*De dónde salen los números:* **del fact sheet vigente que aporta el asesor.**
+Nunca de la memoria, de `oferta.md` ni de una propuesta anterior: cambian todos
+los meses. Si no lo subió, pedíselo antes de armar la lámina — ver criterio 65.
+Y las ventanas las elige él, mirando todas — ver criterio 61.
+
+*Cómo se rompió:* una propuesta sumaba el saldo de una cuenta
+administrada de CEDEARs de ETFs y le dedicaba una lámina entera: objetivo y
+estrategia, sin un solo número de desempeño.
+
+*Origen:* corrección de Pablo, 16/09/2026.
+
+---
+
+## 84. La cartera resultante se cuenta por tipo de riesgo, antes y después
+
+La lámina de cómo queda la cartera —criterio 51— muestra **cómo varía cada tipo
+de riesgo**, no sólo cada clase de activo.
+
+*Por qué:* la clase de activo es demasiado gruesa para mostrar un movimiento. En
+un rebalanceo que vende ON y compra una cuenta de ETFs, "renta fija −7,7 pp,
+renta variable +8,2 pp" es cierto pero dice poco. Lo que el cliente necesita ver
+es que baja la exposición a deuda corporativa argentina y sube la de equity
+internacional, y eso vive en el tipo de riesgo.
+
+*La mejor forma es una tabla con las dos cosas:* agrupada por clase de activo, con
+una fila por tipo de riesgo y columnas **antes, después y variación**, con
+subtotal por grupo y total. Es la misma lógica de la tabla de cartera final,
+que agrupa por clase y detalla abajo.
+
+```json
+{"tipo": "cartera_sugerida", "titulo": "Así queda la cartera",
+ "agrupar_por": "clase", "subtotales": true,
+ "columnas": [
+   {"clave": "clase", "titulo": "Clase de activo"},
+   {"clave": "descripcion", "titulo": "Tipo de riesgo"},
+   {"clave": "antes", "titulo": "Antes", "align": "r"},
+   {"clave": "despues", "titulo": "Después", "align": "r"},
+   {"clave": "variacion", "titulo": "Variación", "align": "r"}],
+ "items": [
+   {"clase": "Renta fija", "descripcion": "ON corporativa",
+    "antes": "45,0%", "despues": "37,3%", "variacion": "−7,7 pp"}],
+ "total": {"clase": "Total", "antes": "100,0%", "despues": "100,0%", "variacion": "0,0 pp"}}
+```
+
+Los subtotales suman solas las columnas de montos, porcentajes y puntos, cada
+una en su formato.
+
+**Variante preferida cuando hay que mover plata: "Gap a cubrir" en USD.** En vez
+de la variación en puntos, una columna con cuánto hay que comprar o vender de
+cada tipo de riesgo para llegar al objetivo. Es lo que el cliente necesita para
+dimensionar la operación: "+USD 367.500 de equity internacional" dice más que
+"+29,9 pp".
+
+- **En el JSON, con signo:** `+USD 367.500` si hay que comprar, `−USD 656.000`
+  si hay que vender, `USD 0` si no se toca. **En el PDF, el signo se vuelve
+  color:** `USD 367.500` en verde, `USD 656.000` en rojo — sin el signo, ver
+  criterio 89.
+- **La base es la cartera que administramos**, no el patrimonio total del
+  cliente.
+- **La fila de total cierra en `USD 0`** cuando las compras salen de la liquidez
+  de la misma cartera: lo que entra en un tipo de riesgo sale de otro.
+- Los subtotales por grupo suman el gap con su signo y se pintan igual que las
+  filas.
+
+```json
+{"clave": "gap", "titulo": "Gap a cubrir", "align": "r"}
+```
+
+con celdas como `"gap": "+USD 367.500"` y `"total": {"gap": "USD 0"}`. Las
+columnas de antes y después se llaman como el caso lo pida —"Hoy" y "Objetivo"
+en una revisión de posicionamiento—.
+
+*Cómo se rompió:* la última lámina de ese rebalanceo era "Cómo queda distribuida la
+cartera" con tres deltas y dos donuts **por clase de activo**, y el movimiento
+real —salir de dos ON y entrar en ETFs— no se veía en ningún lado.
+
+*Origen:* corrección de Pablo, 16/09/2026. La variante del gap en USD salió de la
+el deck con captura de gráfico, 17/09/2026: la columna había quedado con
+`"sumar": false` porque el subtotal no sabía sumar montos con signo.
+
+---
+
+## 85. Pocas tarjetas en una fila miden lo mismo que en una fila de cuatro
+
+Una fila de deltas se divide siempre en **al menos cuatro columnas iguales**. Con
+dos o tres tarjetas, cada una ocupa su cuarto de fila, alineada a la izquierda, y
+el sobrante queda a la derecha.
+
+*Por qué:* la tarjeta tiene un tamaño propio, el mismo en todo el deck. Si cambia
+según cuántas haya, dos láminas del mismo documento muestran la misma pieza a dos
+tamaños distintos, y el número —que es lo que importa— pierde presencia justo
+cuando hay menos cosas compitiendo con él.
+
+*Lo que no:* ni estirarlas a media lámina cada una —quedan huecas—, ni encogerlas
+al ancho de su texto. La v1.2 hacía lo segundo: medían lo que su contenido y
+llevaban el texto centrado. Dos tarjetas salían chicas, apretadas y sin aire.
+
+*La referencia:* las cuatro tarjetas de "El efecto sobre la cartera" en la
+del primer deck completo. Con dos tarjetas, tienen que medir lo mismo que
+las dos primeras de esa fila.
+
+*Cómo se rompió:* la lámina "Cómo queda distribuida" de otro deck, con dos
+deltas.
+
+*Origen:* corrección de Pablo, 16/09/2026.
+
+---
+
+## 86. Con tres gráficos en una fila, el donut se apila sobre su leyenda
+
+Con tres gráficos por fila cada tarjeta mide un tercio de la lámina. El donut y su
+leyenda **no entran uno al lado del otro**: la leyenda se pasa del borde y los
+porcentajes quedan sobre el filete.
+
+*Qué hace el generador:* con tres gráficos apila —**donut arriba, leyenda
+debajo**— y el donut **crece** a 132px. Apilados no compiten por el ancho, así que
+el tamaño del donut lo decide el alto disponible, no la leyenda.
+
+*Por qué crecer y no achicar:* la primera versión de este criterio resolvía el
+problema al revés, bajando el donut a 88px para que entrara al costado. Entraba,
+pero la tarjeta más alta de una fila de tres suele ser una de barras largas —diez
+u once sectores—, y todas las tarjetas se estiran a ese alto: un donut de 88px
+dejaba el recuadro medio vacío. Apilado y grande, lo llena.
+
+*Y el donut va centrado en su tarjeta* (`margin-top/bottom:auto`, como ya hacían
+las barras): si no, queda colgado arriba con todo el aire junto abajo.
+
+*La excepción: entre donuts hermanos, alinear gana.* En una fila de tres, el grid
+estira las tarjetas al mismo alto, y centrar hace que la de leyenda corta baje su
+donut y la de leyenda larga lo suba: ni los donuts ni el arranque de las leyendas
+quedan a la misma altura, y la fila se lee desprolija. En ese caso van **alineados
+arriba** (`.dist-wrap.n3 .donut-card .donut-row{margin-top:0;margin-bottom:auto}`).
+El centrado queda para la tarjeta que no tiene con quién alinearse.
+
+*Lo que el generador mide:* que la leyenda no termine más allá del ancho útil de
+su tarjeta. **El control de "recuadro vacío" del criterio 81 no aplica a los
+apilados** —ahí el gráfico no ocupa el ancho a propósito— y el generador lo saltea
+cuando detecta el apilado.
+
+*Si aun así avisa:* acortá etiquetas —"Equity Int" en vez de "Equity
+Internacional"— o poné dos gráficos por fila.
+
+*Cómo se rompió:* en el deck con captura de gráfico las tres tarjetas de una fila
+tenían la leyenda pegada al filete, y con siete categorías era peor. La solución
+de achicar el donut se reemplazó armando la pieza del plan de aportes, donde una
+fila con once sectores dejó el defecto contrario a la vista.
+
+*Origen:* el deck con captura de gráfico, 17/09/2026. Reescrito con la pieza del plan
+de aportes, 20/09/2026.
+
+---
+
+## 87. Una captura va recortada al gráfico, con fuente y período
+
+Cuando la propuesta lleva la captura de un gráfico —rendimiento de un ETF desde una
+plataforma, un múltiplo de FactSet—:
+
+**Se recorta al gráfico.** Sin pestañas, menús, selectores de período, botones ni
+barras de la plataforma. Lo que queda es el eje, la serie y, si hace falta, la
+escala. Una captura con la interfaz alrededor se lee como una foto de pantalla
+pegada, no como parte de la propuesta.
+
+**La nota dice de dónde sale y qué período muestra.** "Fuente: FactSet. SPY:
+rendimiento del 31/05 al 16/09/2026." Sin eso, el cliente no puede saber si el
+gráfico es de ayer o de hace un año, ni de quién es el dato. El validador avisa si
+la lámina con imagen no tiene nota.
+
+**Va dentro de la skill, no en un parche.** El campo `imagen` del capítulo `kpis`
+la dibuja al lado de las tarjetas — ver [`capitulos.md`](capitulos.md). El
+generador controla que no se deforme y que no desborde. Un parche fuera de la
+skill se pierde la próxima vez que alguien regenera la propuesta.
+
+*Si es muy alta:* una captura cuadrada o vertical desborda la lámina. Recortala a
+algo apaisado — la proporción de un gráfico de serie temporal. El alto que la
+lámina le deja lo fijan las tarjetas, no la imagen: ver criterio 98. Si en
+cambio es muy apaisada, va a lo ancho — criterio 90.
+
+*Cómo se rompió:* en el deck con captura de gráfico el de SPY se sumó con un
+script aparte (`parche-grafico-spy.py`) que reemplazaba el cuerpo de la lámina en
+el HTML. Regenerar con la skill borraba el gráfico.
+
+*Origen:* el deck con captura de gráfico, 17/09/2026.
+
+---
+
+## 88. El flujo de fondos va sólo a pedido, sobre el calendario del asesor
+
+La lámina de flujo de fondos —capítulo `flujo_de_fondos`— **se arma sólo si el
+asesor la pide**. No es un capítulo por defecto de ninguna propuesta con bonos.
+
+**El insumo lo trae él:** el flujo de fondos de cada bono —el xlsx que exporta la
+plataforma— y los nominales de cada posición. Si pide la lámina sin traerlos,
+pedíselos antes de armar nada. **Los cupones no se calculan de memoria** ni se
+deducen de la tasa: un cronograma mal inferido es un número falso con formato de
+dato, y el cliente lo va a contrastar contra lo que cobra.
+
+**La cuenta la hace el generador.** Pago cada 100 VN × nominales ÷ 100, sumado por
+mes de pago efectivo. Quien escribe el JSON sólo carga ruta y nominales.
+
+**Vista mensual, doce meses.** Renta y amortización apiladas, el total del mes
+arriba. Lo que se cobra después de los doce meses va en una tarjeta, nunca como una
+barra más: en la misma escala aplasta el gráfico y los doce meses parecen iguales.
+Si un bono amortiza dentro de la ventana, esa barra sí domina: es el dato real.
+
+**Colores:** renta en azul y amortización en navy. Ni verde ni naranja —criterio
+60—.
+
+*Cómo se verifica:* el validador avisa si un bono no tiene archivo, pagos o
+nominales, y si su amortización no suma 100 cada 100 VN. Las cuentas se probaron
+contra un cálculo independiente con tres flujos reales (LUC5O, MCC3O y PQCRO) y
+dieron exacto.
+
+*Referencias:* la propuesta modelo en planilla de Max Capital ("Vencimientos por
+año") y la de un competidor con barras mensuales, que ponía el total posterior a
+12 meses como una barra que aplastaba el resto.
+
+*Origen:* pedido de Pablo, 17/09/2026. Los xlsx de ejemplo están en
+`material/flujos-de-fondos/`.
+
+---
+
+## 89. En una tabla, signo o color: no los dos
+
+**Una celda que se pinta por su signo se imprime sin el signo.** `+USD 367.500`
+sale como `USD 367.500` en verde; `−7,7 pp`, como `7,7 pp` en rojo.
+
+*Por qué:* el signo y el color dicen lo mismo. Juntos, la celda repite la
+información dos veces y se ve cargada — y en una tabla de diez filas con gaps y
+variaciones, esa repetición es la mitad de la tinta de la columna.
+
+*Cómo:* en el JSON el dato **conserva el signo**, porque es de donde sale el color
+y lo que suman los subtotales. El generador lo saca recién al imprimir la celda.
+Vale para las filas y los subtotales de `cartera_sugerida` y `cartera_actual`, y
+para la `tabla` libre.
+
+*Lo que no cambia:* las **tarjetas de KPI** y los **deltas** no se colorean, así que
+conservan el signo: ahí es la única marca de la dirección. `−34,1 pp` en una
+tarjeta sigue diciendo `−34,1 pp`. Tampoco cambia el **rótulo de una barra**: se
+lee como número, lejos de su barra, y el criterio 97 le deja el signo escrito.
+
+*La excepción, que es importante:* el criterio vale para columnas de
+**resultado**, donde rojo significa "perdió". En una columna de **flujo**
+—aportes netos, suscripciones y rescates, un flujo de caja— el color miente: un
+retiro no es una pérdida. Y sin el signo, `USD 380.000` en una fila de aportes
+netos se lee como un aporte cuando fue un retiro: el número dice exactamente lo
+contrario de lo que pasó. Esas columnas **escriben el signo y no se pintan**, con
+`"signo": ["Neto"]` en el capítulo `tabla` —o `"signo": true` para toda la
+tabla—. **Un nombre de la lista selecciona la columna o la fila que se llame
+así:** en un corte anual los años son las columnas y el concepto es la primera
+celda de cada fila, así que la excepción cae sobre una fila. Nombrarla alcanza. Sigue habiendo una sola marca de la dirección, que es lo que el criterio
+pide; lo que cambia es cuál.
+
+*Cómo se rompió:* en un deck de rebalanceo una fila de aportes netos
+salió con `−USD 380.000` impreso `USD 380.000` en rojo: sin signo se leía como
+aporte y el rojo lo llamaba pérdida, justo al revés del mensaje de la lámina. Se
+zafó con paréntesis contables y una nota, fuera de la skill.
+
+*Cómo se rompió:* en el deck con captura de gráfico la columna "Gap a cubrir" salía
+con `+USD` en verde y `−USD` en rojo. Se resolvió con una expresión regular en un
+parche fuera de la skill, que se perdía al regenerar.
+
+*Origen:* pedido de Pablo, 17/09/2026.
+
+---
+
+## 90. Una captura muy apaisada va a lo ancho, no en media lámina
+
+Una serie temporal recortada al gráfico viene con proporción de **3:1 o más**. En
+el layout de media lámina —captura a la izquierda, tarjetas 2×2 a la derecha— el
+ancho disponible la reduce hasta volverla ilegible: la línea que el cliente tiene
+que leer queda de tres milímetros.
+
+*Cómo:* `"posicion": "abajo"` en el bloque `imagen` del capítulo `kpis`. Las
+tarjetas pasan arriba, en una fila a lo ancho, y la captura ocupa toda la lámina
+debajo. Ver [`capitulos.md`](capitulos.md).
+
+*Cuándo cada uno:* de 3:1 para arriba, a lo ancho. Más cuadrada que eso, al
+costado, que deja las tarjetas más grandes y legibles.
+
+*Detalle:* si el bloque `imagen` no trae `titulo` ni `valor`, la captura va sin
+recuadro interno — el recuadro sólo le robaría alto, y el marco ya se lo da el
+borde de la propia imagen.
+
+*Cómo se rompió:* la lámina de simulación de aportes tenía una captura de 3,5:1
+en media lámina. Pasó de ilegible a ser el centro de la lámina.
+
+*Origen:* pieza del plan de aportes, 20/09/2026.
+
+---
+
+## 91. Dos láminas seguidas con la misma estructura no pueden bailar
+
+Cuando dos láminas consecutivas comparten layout —dos fichas de producto, dos
+puntos de entrada, dos capturas con sus tarjetas— **todo lo que no es el dato
+tiene que medir exactamente igual**: mismo alto de tarjetas, mismos rótulos, misma
+cantidad de líneas, y las capturas del mismo tamaño en píxeles.
+
+*Por qué:* al pasar de una a la otra, lo que se mueve se ve. Si un rótulo ocupa
+dos líneas en una y una en la otra, o si una tarjeta lleva nota y la vecina no, el
+bloque se rearma y el lector percibe un salto en vez de una comparación.
+
+*El caso más traicionero son las capturas:* dos imágenes de distinta proporción
+dan recuadros de distinto alto, y si las tarjetas se estiran al recuadro, cambian
+de tamaño con ellas. Por eso las tarjetas al lado de una captura tienen **alto
+fijo** y no se estiran — es la misma idea del criterio 26, pero entre láminas.
+
+*Cómo igualar dos capturas:* **agregando margen blanco, nunca recortando**. Se
+crea un lienzo del tamaño mayor y se pega la imagen centrada. Recortar pierde
+parte del gráfico; el margen no pierde nada y las dos láminas quedan calcadas.
+
+*Cómo se verifica:* renderizando las dos páginas y comparando posiciones — ver
+criterio 62 y el método del criterio 92. Mirarlas no alcanza: en la pieza del plan
+de aportes las tarjetas **nunca se habían movido**, y se perdieron dos vueltas
+buscando el salto donde no estaba. Lo que bailaba era el contenido adentro.
+
+*Origen:* láminas de punto de entrada de la pieza del plan de aportes, 20/09/2026.
+
+---
+
+## 92. Una regla que ajusta una tarjeta hero tiene que nombrar `.hero`
+
+En `deck.css`, las tarjetas grandes se definen así:
+
+```css
+.kpi-grid.hero .kpi{padding:20px 18px;min-height:132px;}   /* 0,3,0 */
+```
+
+Cualquier regla escrita como `.mi-variante .kpi{...}` tiene especificidad 0,2,0 y
+**pierde, aunque esté más abajo en el archivo**. La regla práctica: toda regla que
+ajuste una tarjeta dentro de un grid hero se escribe
+`.kpi-grid.hero.<variante> .kpi`. Lo mismo para `.k-label`, `.k-value` y
+`.k-note`.
+
+*Lo que costó:* fijar `grid-auto-rows:120px` no achicaba nada — la tarjeta
+conservaba su `min-height:132px` y **se derramaba 12px sobre la fila de abajo**,
+que se ve como tarjetas encimadas: peor que el problema original. Y cuatro reglas
+escritas para otra variante no hacían absolutamente nada; las láminas se veían
+bien con los valores por defecto. Se borraron: **un CSS que miente sobre lo que
+hace es peor que no tenerlo.**
+
+*El control que faltaba:* el generador ahora avisa cuando **dos cajas hermanas se
+superponen**, en el deck y en el one-pager. Era el defecto más visible de todos en
+un PDF terminado y pasaba en silencio: el control de desborde sólo mira el pie de
+la lámina, y el de imagen sólo la proporción. Dice qué lámina, cuántos píxeles y
+con qué textos empiezan las dos cajas.
+
+*El método que resolvió el caso:* medir sobre el PDF renderizado en vez de
+mirarlo. Rasterizar la página y buscar en una columna los tramos verticales no
+blancos da dónde empieza y termina cada caja. Así apareció que la superposición
+era de 12px exactos —justo `132 − 120`—, que llevó directo a la causa.
+
+*Origen:* pieza del plan de aportes, 20/09/2026.
+
+---
+
+## 93. Las magnitudes van en dígitos, no en palabras
+
+En una propuesta financiera los números se escriben con números: **5 puntos**,
+**3 tramos**, **3 fichas**, **2 carteras**. También cuando abren la oración y
+también en el título de una tarjeta, que es donde la regla gramatical de escribir
+en letras los números chicos empuja para el otro lado.
+
+*Por qué:* el lector escanea la lámina buscando cifras. "Cinco puntos por tramo"
+obliga a leer la frase entera para encontrar la magnitud; "5 puntos por tramo" la
+entrega en el primer golpe de vista. Y, como dijo Pablo, *"nadie en finance habla
+de puntos en números escritos"*: la forma escrita suena a prosa, no a propuesta.
+
+*Dónde no:* cuando el número no es una magnitud sino parte de una expresión
+—"de una", "por un lado"—, y en los textos legales, que tienen su propia
+convención.
+
+*Cómo se rompió:* un deck de rebalanceo salió con "Cinco puntos por
+tramo" y "Quince puntos de renta variable" en los títulos de las tarjetas.
+
+*Origen:* corrección de Pablo sobre un deck de rebalanceo, 20/09/2026.
+
+---
+
+## 94. El fino de ejecución es del asesor, no del cliente
+
+En la propuesta, **cómo se financia una compra se cuenta por clase de activo y
+por monto agregado del tramo**: "se financia con la venta gradual de ONs
+corporativas argentinas, USD 1,8M en el primer tramo". Nunca la lista de tickers
+con sus nominales y sus precios.
+
+> *"al cliente no le traslado esto, me sirve a mí pero al cliente le vamos con la
+> estrategia a grandes rasgos, no con el fino, eso lo veo yo"*
+
+*Por qué:* el fino lo decide el asesor al operar, contra precios que no son los
+del informe. Escrito en la propuesta deja de ser un plan y pasa a ser un
+compromiso, que después no se cumple al pie de la letra — y cada desvío hay que
+explicarlo. El ladder de ventas, los nominales y el orden de ejecución se le
+pasan al asesor por chat o en un anexo suyo, no van al PDF.
+
+*Cómo se hace igual:* las tarjetas de comprar y vender del capítulo `trades`
+funcionan por clase de activo — se pone la clase en `nombre` y el peso en
+`monto`, sin nombrar un solo instrumento. Ver
+[`capitulos.md`](capitulos.md). No hace falta descartar el bloque entero para
+cumplir el criterio.
+
+*Origen:* indicación de Pablo, reiterada sobre un deck de rebalanceo,
+20/09/2026. Ver también criterio 79.
+
+---
+
+## 95. Una clase que viene adentro de un vehículo se abre una sola vez
+
+Cuando un vehículo trae adentro una clase que la cartera no tenía —el oro dentro
+de la cuenta administrada de CEDEARs de ETFs— hay que **decidir una sola vez** si
+esa clase se abre como categoría propia, y **propagar la decisión a todos lados**:
+a los dos gráficos de la lámina, a las tarjetas de delta y a cualquier texto que
+cite el porcentaje.
+
+*Por qué:* las dos opciones son defendibles por separado. El oro adentro de renta
+variable es más simple de leer; abierto es más preciso. Lo que no se sostiene es
+una de cada: dos gráficos de la misma lámina que contestan la misma pregunta con
+dos números. Es el criterio 64 en su forma más difícil de ver, porque cada
+gráfico está bien y el error sólo aparece al compararlos.
+
+*El control:* el validador avisa cuando dos gráficos de un mismo capítulo
+`distribuciones` usan la misma etiqueta con valores distintos. Dice la etiqueta,
+los dos valores y en qué gráfico está cada uno.
+
+*Cómo se rompió:* en un deck de rebalanceo el oro entró **dentro** de
+renta variable en un gráfico y **aparte** en el otro, en la misma lámina: 16,4%
+contra 14,4%. Y la tarjeta de delta decía "+15,0 pp" contando el oro dos veces.
+Lo correcto quedó +13,0 pp de renta variable y +2,0 pp de oro, que suman los 15
+del vehículo. Lo detectó Pablo, no el validador — de ahí el control.
+
+*Origen:* un deck de rebalanceo, 20/09/2026.
+
+---
+
+## 96. Dos magnitudes distintas no comparten un gráfico
+
+Un gráfico tiene **un solo eje vertical**. Si hay dos magnitudes que no se miden
+en lo mismo —facturación y activos administrados, monto y rendimiento— van en
+**dos gráficos**, o una va al lado como tarjeta.
+
+*Por qué:* con dos escalas verticales el dibujo lo elige quien arma el gráfico.
+Las dos escalas son arbitrarias, así que se las puede mover hasta que las curvas
+se crucen donde a uno le conviene, y el cruce —que es lo único que el ojo
+retiene— no significa nada. En una propuesta de inversión eso no es un problema
+estético.
+
+*Cuándo aparece la tentación:* cuando hay lugar para un gráfico y dos cosas para
+contar. La respuesta es contar una y poner la otra en una tarjeta, no apretar las
+dos en el mismo dibujo.
+
+*Origen:* un gráfico de referencia que Pablo trajo del tablero del equipo,
+20/09/2026. No se replicó, y conviene que quede escrito por qué.
+
+---
+
+## 97. Una serie con negativos se dibuja con eje en cero
+
+Una serie que cruza el cero —aportes netos por año, un flujo de caja, variaciones
+contra un período anterior— se dibuja con **el cero donde le corresponde según el
+rango**, con las barras saliendo para los dos lados: verde para arriba, rojo para
+abajo. En el JSON alcanza con que haya un valor negativo; también se puede pedir
+con `"eje_cero": true`.
+
+**La unidad la dice el gráfico.** `"unidad": "USD"` rotula las barras con la
+magnitud abreviada —`USD 4,7M`, `−USD 380K`— en vez de tratar los valores como
+porcentajes. Los millones llevan un decimal y los miles no.
+
+**El negativo lleva su signo escrito; el positivo va pelado.** Un número sin
+signo ya se lee como positivo, así que el `+` no agrega nada; el `−` es lo único
+que no se puede perder, porque el rótulo se lee como número —lejos de su barra— y
+ahí un retiro sin signo se lee como un aporte. Es la misma razón del criterio 89,
+y el caso en que la regla de "signo o color" se resuelve del lado del signo.
+
+**El verde es `#15803D`, no el de la marca.** El verde `#12A150` contra el rojo
+`#F31260` da **ΔE 1,3 en deuteranopia**: para un daltónico son el mismo color, y
+en un gráfico donde el color *es* el dato eso lo vuelve ilegible. `#15803D` es el
+mismo verde un paso más oscuro, da ΔE 10,6 y a simple vista sigue siendo el verde
+de Max Capital. Las pastillas de comprar y vender no cambian: ahí el color
+acompaña a un texto que ya dice qué es.
+
+**Horizontal o en columnas.** Por defecto salen barras horizontales, como el
+resto de los gráficos del deck. `"orientacion": "vertical"` las dibuja como
+columnas, que es la forma de leer una serie por año: el tiempo corre de izquierda
+a derecha y el signo se ve como arriba o abajo de la línea. Es el dibujo del
+tablero del equipo, y el que hay que usar cuando el eje horizontal es tiempo.
+
+**Un donut no acepta negativos** — un gajo no tiene ángulo negativo. Si la serie
+los tiene, el generador la manda a barras aunque entre en el máximo de
+categorías.
+
+*Si hace falta un gráfico que la skill no dibuja:* que entre por `imagen` como
+**SVG**, no rasterizado. El generador inyecta el SVG como markup, así que hereda
+el CSS del deck y sale con Inter. Dos trampas que costaron tiempo y ya están
+resueltas: un `<img>` es un documento aparte y **no** ve el `@font-face` de la
+página —por eso va inline—, y el MIME de un SVG es `image/svg+xml`, no
+`image/svg`. Si igual hay que rasterizar con PyMuPDF, ojo: **no hereda
+`font-family` de un `<g>`**, hay que ponerlo en cada `<text>` o el render cae a
+serif, y eso recién se ve en el PDF terminado.
+
+*Cómo se rompió:* `barras()` clampeaba el ancho a cero y rotulaba siempre en
+porcentaje, así que una serie de aportes netos salía con **barra invisible y la
+etiqueta "−4718200,0%"**. Para un deck de rebalanceo hubo que generar
+un PNG aparte con un script fuera de la skill.
+
+*Origen:* un deck de rebalanceo, 20/09/2026.
+
+---
+
+## 98. El alto de una lámina de KPIs con captura lo mandan las tarjetas
+
+> *"que no exceda en altura a la suma de las cards, las cards te marcan los
+> límites"*
+
+En una lámina de `kpis` con `imagen`, **la altura de referencia es la de la
+columna de tarjetas**. La captura entra ahí; no es la captura la que fija el alto
+de la lámina.
+
+*En números:* para una grilla de 4 tarjetas en 2×2, la imagen tiene que venir en
+una proporción cercana a **0,5 (alto/ancho)** — 1200×600 es el caso que quedó
+bien. Más alta que eso y empuja a las tarjetas o deja aire; más chata y el
+recuadro queda con espacio muerto abajo.
+
+*Por qué:* las tarjetas son el esqueleto de la lámina y se repiten entre láminas;
+la captura cambia en cada una. Si el alto lo decide la imagen, dos láminas
+seguidas con capturas de distinta proporción dan tarjetas de distinto tamaño y el
+bloque salta al pasar — que es el criterio 91.
+
+*Cómo se resuelve si no entra:* recortando la captura, no achicando las
+tarjetas. Y si la imagen es mucho más apaisada que 0,5, va a lo ancho con
+`"posicion": "abajo"` — criterio 90.
+
+*Origen:* un deck de rebalanceo, 20/09/2026. Va junto al criterio 87.
+
+---
+
+## 99. "Riesgo argentino" es un dato, no una etiqueta para estresar
+
+El dato neutro va: la barra de exposición por geografía con Argentina en 28,3%,
+la tabla por tipo de riesgo. Lo que **no** se agrega por cuenta propia es la
+etiqueta que lo califica —una tarjeta de delta que diga *"Riesgo argentino −15,0
+pp"*, un subtítulo que diga *"15 puntos menos de riesgo argentino"*—.
+
+> *"estamos estresando un concepto que no quiero"*
+
+*Por qué:* el cliente eligió su exposición a la Argentina, muchas veces con el
+mismo asesor. Titular la baja como "menos riesgo argentino" convierte una
+decisión de asignación en un juicio sobre lo que tenía, y pone a la propuesta a
+discutir con el pasado del cliente en vez de con su objetivo. La misma
+diversificación se cuenta por lo que suma: más exposición internacional, más
+moneda dura, más liquidez.
+
+*Cuándo sí:* **cuando el asesor lo pide.** En el rebalanceo de otro asesor la pastilla
+de riesgo argentino con su variación en pp fue un pedido explícito, y ahí va. La
+regla es sobre la iniciativa, no sobre la existencia: no lo introduzcas vos.
+
+*Cómo se rompió:* se probó la tarjeta de delta en un deck de rebalanceo y Pablo la
+hizo revertir.
+
+*Origen:* corrección de Pablo sobre un deck de rebalanceo, 20/09/2026.
+
+---
+
+## 100. La skill no lleva adentro nombres de clientes
+
+Los criterios cuentan **de qué tipo de pieza** salió cada uno —"un deck de
+rebalanceo", "la propuesta de servicio", "el primer one-pager"— con su fecha,
+pero **sin el nombre del cliente**. Lo mismo vale para los ejemplos: el cliente
+de ejemplo es `"Cliente Ejemplo S.A."`, acá, en `esquema.md`, en
+`ejemplos/propuesta_ejemplo.json` y en los comentarios del CSS.
+
+*Los asesores sí van.* `equipo.md` es el directorio de contacto y tiene que estar
+completo; un criterio puede nombrar a quien lo pidió. La regla es sobre clientes,
+no sobre el equipo.
+
+*Por qué:* la skill la tiene instalada todo el equipo comercial y se reparte por
+Drive. Que viaje adentro quién es cliente de quién es información que no necesita
+para funcionar, y que no controlamos una vez que el archivo circula. El caso se
+entiende igual sin el nombre: lo que enseña un criterio es la situación, no de
+quién era la cartera.
+
+*Cómo:* antes de empaquetar una versión, barrer la fuente con los nombres de las
+carpetas de `clientes/` y de los archivos de `material/modelos/`, dejando pasar a
+los asesores de `equipo.md`. Es un grep, tarda segundos, y es lo único que evita
+que se vuelva a colar.
+
+*Cómo se rompió:* la v1.7.1 despersonalizó `criterios.md` entero y aun así
+quedaron cuatro casos con apellido y dos nombres de relleno que eran los de un
+cliente real de la casa. El porqué de la despersonalización estaba sólo en el
+changelog de esa versión, que se entierra a medida que se acumulan versiones.
+Por eso pasa a criterio.
+
+*Origen:* pedido de Pablo, 20/09/2026.

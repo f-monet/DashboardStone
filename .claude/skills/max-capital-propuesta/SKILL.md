@@ -14,35 +14,108 @@ description: >-
   por otro. El asesor puede sumar fact sheets,
   carteras modelo, la posición actual o cualquier otro contexto del cliente: la
   skill los interpreta y produce el PDF final sin que nadie toque el diseño.
-  — v1.2 (06/09/2026)
+  — v1.7.2 (20/09/2026)
 ---
 
 # Max Capital — Propuestas de Inversión
 
-**Versión 1.2 · 6 de septiembre de 2026**
+**Versión 1.7.2 · 20 de septiembre de 2026**
 
 Si el asesor pregunta qué versión tiene instalada, es esta. La última siempre
 está en la carpeta de Drive del equipo.
 
-**Qué cambió desde la v1.1**, todo salido de armar el deck de Jimena Laino:
+**La v1.7.2 corrige dos cosas de la v1.7.1**, las dos encontradas mirando el PDF
+de la misma propuesta de rebalanceo:
 
-- Capítulo **`trades`** para movimientos emparejados — sale este bono, entra este
-  otro. Es el hermano de `cartera_actual`, que sigue siendo el formato del
-  rebalanceo por estrategia. Ver criterio 63.
-- El **criterio 53 se reescribió por intención**: la proyección de retiro va si
-  entra dinero nuevo, no según cómo se llame el caso. La excepción anterior
-  ("no va en un reposicionamiento") se aplicó mal mirando la etiqueta.
-- Campo **`orden`** en el bloque `acciones`, para elegir la secuencia de las
-  columnas: en un rebalanceo se vende primero.
-- **Tres bugs arreglados**: los puntos de una etiqueta de gráfico se convertían en
-  comas ("EE.UU." salía "EE,UU,"); el `nota` de `instrumentos` se aceptaba y no se
-  dibujaba; `subtotales` emitía subtotal para grupos de una sola fila.
-- Las tarjetas de **`deltas`** dejan de repartirse el ancho cuando hay menos de
-  tres: miden lo que mide su contenido y el sobrante queda vacío.
-- Criterios nuevos: **63** (trade ≠ rebalanceo), **64** (dos números que contestan
-  lo mismo), **65** (un instrumento no se confirma de memoria), **66** (sin puntos
-  en las etiquetas de gráficos), **67** (cuando hay dos carteras, cada slide dice
-  cuál muestra).
+- **Donuts hermanos alineados arriba.** En una fila de tres gráficos, el grid
+  estira las tarjetas al mismo alto y el centrado de la v1.6 hacía que el donut
+  de leyenda corta quedara más abajo que el de leyenda larga. Ahora los apilados
+  van alineados arriba y el centrado queda para la tarjeta sola (criterio 86).
+- **Criterio 100: la skill no lleva adentro nombres de clientes.** La v1.7.1
+  despersonalizó `criterios.md` y aun así quedaron cuatro casos con apellido y
+  dos nombres de relleno que eran los de un cliente real. El porqué estaba sólo
+  en el changelog, que se entierra; ahora es criterio, con el barrido a correr
+  antes de empaquetar. Los asesores de `equipo.md` sí van.
+- **`signo` también selecciona filas.** La excepción del criterio 89 —una columna
+  de flujo escribe el signo en vez de pintarse por él— sólo miraba encabezados.
+  Pero un corte anual corre al revés, con los años en las columnas, y ahí
+  "Aportes netos" es una fila: nombrarla no hacía nada y el retiro volvía a salir
+  sin signo y en rojo. Ahora un nombre de la lista selecciona la columna o la
+  fila que se llame así.
+
+**La v1.7.1 no cambiaba nada del funcionamiento:** despersonalizó los casos de
+`criterios.md`. Cada criterio sigue diciendo de qué pieza salió y en qué fecha
+—"el primer one-pager", "la propuesta de servicio", "un deck de rebalanceo"—,
+pero sin el nombre del cliente ni sus cifras. La skill la tiene todo el equipo y
+no hay razón para que lleve adentro quién es cliente de quién.
+
+**Qué cambió desde la v1.6**, todo salido de una propuesta de rebalanceo real
+—una cartera concentrada en renta fija que pasa a tener renta variable— en unas
+25 vueltas de corrección mirando el PDF terminado:
+
+- **Series que cruzan el cero.** Un gráfico de barras con valores negativos
+  —aportes netos por año, un flujo de caja— ahora pone el cero donde le toca y
+  dibuja para los dos lados. Antes el ancho se clampeaba a cero y la etiqueta
+  salía "−4718200,0%": había que generar el gráfico afuera de la skill. Con
+  `"unidad": "USD"` el rótulo va abreviado —`USD 4,7M`, `−USD 380K`— y con
+  `"orientacion": "vertical"` sale como columnas, que es como se lee una serie
+  por año. El verde de las series
+  es `#15803D`, no el de la marca: contra el rojo, el de la marca da ΔE 1,3 en
+  deuteranopia, o sea que son el mismo color. Criterio 97.
+- **Un gráfico propio entra como SVG y sale con Inter.** El generador lo inyecta
+  como markup en vez de meterlo en un `<img>`, así que hereda el CSS del deck.
+  Antes el MIME estaba mal armado y no se podía ni pasar. Criterio 97.
+- **Columnas de flujo: `"signo"` en el capítulo `tabla`.** El criterio 89 —signo
+  o color, no los dos— está pensado para columnas de resultado. En una fila de
+  aportes netos, sacar el signo y pintar de rojo decía dos cosas falsas: que un
+  retiro fue un aporte y que fue una pérdida. Esas columnas ahora escriben el
+  signo y no se pintan. Criterio 89, con su excepción.
+- **Control nuevo: la misma etiqueta con dos valores.** Si dos gráficos de una
+  misma lámina dicen "Renta variable 16,4%" y "Renta variable 14,4%", el
+  validador lo avisa. Pasa cuando un vehículo trae adentro una clase que la
+  cartera no tenía y se abre en un gráfico pero no en el otro. Criterio 95.
+- **La columna de tarjetas al lado de una captura es más ancha** (1,5fr contra
+  1fr): con la anterior, una cifra de siete dígitos partía en dos renglones y
+  otra de la misma fila entraba en uno.
+- **Menos ruido en el validador:** un gráfico que suma 99,9% ya no avisa. Es el
+  redondeo de un fact sheet, no un agujero, y saltaba en cada corrida de toda
+  propuesta que usara ese fact sheet.
+- **Cuatro reglas de Pablo que no estaban escritas:** las magnitudes van en
+  dígitos y no en palabras (93), el fino de ejecución es del asesor y al cliente
+  se le habla por clase de activo (94), dos magnitudes distintas no comparten un
+  gráfico de doble eje (96), y "riesgo argentino" es un dato que va, no una
+  etiqueta que se introduce por cuenta propia (99).
+- **El criterio 25 se extendió**: las cifras abreviadas con M y K no son de la
+  página de resumen, son de **toda** tarjeta de KPI. Acotado como estaba, no se
+  aplicó a una lámina del medio del deck.
+- **Criterio 98**: el alto de una lámina de `kpis` con captura lo mandan las
+  tarjetas, no la imagen — proporción cercana a 0,5 para una grilla de 2×2.
+
+**Qué cambió en la v1.6**, todo salido de armar una pieza genérica sobre
+aportes recurrentes —un deck que no es de un cliente— en quince vueltas de
+corrección mirando el PDF terminado:
+
+- **Captura a lo ancho**: `"posicion": "abajo"` en el bloque `imagen` de `kpis`.
+  Las tarjetas van arriba en una fila y la captura ocupa toda la lámina. Una serie
+  temporal de 3:1 en media lámina es ilegible. Criterio 90.
+- **Las tarjetas al lado de una captura tienen alto fijo** y ya no se estiran al
+  alto de la imagen. Antes, dos láminas seguidas con capturas de distinta
+  proporción hacían saltar las tarjetas al pasar. Criterio 91.
+- **Con tres gráficos en una fila, el donut se apila sobre su leyenda y crece a
+  132px** en vez de achicarse a 88. Apilados no compiten por el ancho, y así el
+  donut llena el alto que impone la tarjeta de barras de al lado. Criterio 86,
+  reescrito: antes decía lo contrario.
+- **El donut va centrado en su tarjeta**, como ya hacían las barras.
+- **Portada sin bloque de contacto**: en una pieza genérica, sin "Presentado por",
+  la fecha se alinea con la línea de confidencialidad en vez de quedar colgada a
+  la derecha. Criterio 73.
+- **Control nuevo: cajas hermanas superpuestas.** Una tarjeta encimada sobre otra
+  es el defecto más visible en un PDF terminado y pasaba en silencio. Ahora el
+  generador avisa qué lámina, cuántos píxeles y con qué textos empiezan las dos
+  cajas. Criterio 92, que además explica la trampa de especificidad CSS que lo
+  causó.
+- El control de "recuadro vacío" del criterio 81 ya no avisa sobre donuts
+  apilados, donde el gráfico no ocupa el ancho a propósito.
 
 Convierte lo que traiga el asesor en un PDF terminado y on-brand. La división de
 trabajo es deliberada: **el asesor y vos discuten el contenido; el script hace
@@ -74,12 +147,21 @@ que a una reunión vaya el deck y quede el one-pager como resumen.
 
 ## El flujo
 
-### 0. Preguntá quiénes firman
+### 0. Preguntá quiénes firman y si se habla del esquema de honorarios
 
-Antes de nada, **preguntale al asesor quiénes van en los datos de contacto**. Se
-trabaja en dupla y el cliente tiene que poder escribirle a los dos; no lo
-deduzcas de quién te está hablando. El directorio del equipo está en
-[`reference/equipo.md`](reference/equipo.md).
+Antes de nada, dos preguntas al asesor:
+
+**Quiénes van en los datos de contacto.** Se trabaja en dupla y el cliente tiene
+que poder escribirle a los dos; no lo deduzcas de quién te está hablando. El
+directorio del equipo está en [`reference/equipo.md`](reference/equipo.md).
+
+**Si con este cliente ya se habló del esquema de honorarios.** Si la respuesta
+no es un sí claro, la propuesta **no nombra el tema**: nada de "fee based",
+"honorario de administración", "sin comisión por operación" ni "migrar de
+esquema", ni en la portada ni en ninguna otra parte. Los productos administrados
+se proponen por lo que hacen. Con muchos clientes eso no se conversa, y un
+documento que lo plantea por su cuenta le abre al asesor una discusión que no
+eligió. Ver criterio 79.
 
 ### 1. Juntá y leé todo el input
 
@@ -97,16 +179,28 @@ inventes.
 **[`reference/oferta.md`](reference/oferta.md) tiene la política comercial del
 equipo**, y conviene leerla antes de escribir la cartera sugerida.
 
-Lo esencial: en **banca privada** se propone bajo esquema de honorario de
-administración, no de comisión por transacción. Hay tres instrumentos que van en
-toda propuesta salvo que el caso lo desaconseje —FCI Max Renta Fija Dólares,
-cartera de CEDEARs de ETFs y notas estructuradas desde USD 250.000— y otros que
+Lo esencial: en **banca privada** la cartera lleva vehículos administrados y no
+se arma sobre operaciones sueltas. Hay tres instrumentos que van en toda
+propuesta salvo que el caso lo desaconseje —FCI Max Renta Fija Dólares, Cuenta
+Administrada CEDEARs de ETFs y notas estructuradas desde USD 250.000— y otros que
 suman cuando el caso lo permite.
 
+**Eso es política interna: decide qué va en la cartera, no qué se le dice al
+cliente.** Del esquema de comisiones sólo se habla si el asesor lo confirmó en el
+paso 0.
+
 Si el asesor te trae una cartera armada sin ningún vehículo administrado,
-**decíselo**: la comodidad empuja al modelo de trading y para banca privada eso
-alinea mal los incentivos. No lo cambies por tu cuenta — planteáselo y que
-decida él.
+**decíselo a él, en el chat**: la comodidad empuja al modelo de trading y para
+banca privada eso alinea mal los incentivos. No lo cambies por tu cuenta —
+planteáselo y que decida él.
+
+**Si la propuesta suma un producto que el cliente no tiene, pedí su fact sheet
+vigente**: va una lámina con su track record. Ver criterio 83.
+
+**El flujo de fondos de la cartera de bonos va sólo si el asesor lo pide.** Si lo
+pide, pedile el flujo de fondos de cada bono —el xlsx que exporta la plataforma— y
+los nominales de cada posición. No lo armes sin ese insumo ni calcules cupones por
+tu cuenta. Ver criterio 88.
 
 En propuestas para **empresas** la lógica es otra y se evalúa caso por caso:
 preguntá antes de asumir.
@@ -144,7 +238,18 @@ Un orden que funciona bien y podés variar:
 
 Para un cliente nuevo, saltea `cartera_actual`. Para una revisión de cartera
 vigente, `cartera_actual` es el capítulo más importante y `forma_de_trabajo`
-probablemente sobre. **Y elegí bien entre `cartera_actual` y `trades`**: el
+probablemente sobre.
+
+**Cuando hay posición actual, se muestra con dos gráficos lado a lado: por clase
+de activo y por tipo de riesgo**, con las mismas categorías del reporte de
+posición del cliente. No un solo gráfico por activo, ni la clase de activo y la
+custodia en láminas separadas. Ver criterio 80.
+
+**La cartera resultante se cuenta por tipo de riesgo, antes y después**, no sólo
+por clase de activo: la clase dice poco cuando lo que se movió es ON contra ETF
+dentro de la misma lámina. Lo mejor es una tabla agrupada por clase de activo,
+con una fila por tipo de riesgo y columnas antes, después y variación. Ver
+criterio 84. **Y elegí bien entre `cartera_actual` y `trades`**: el
 primero justifica cada posición contra el mandato, el segundo compara el
 instrumento que sale con el que entra. Ver criterio 63. Un deck de 6 a 10 slides es el rango cómodo.
 

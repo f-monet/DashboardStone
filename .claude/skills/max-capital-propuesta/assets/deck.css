@@ -18,7 +18,12 @@
 .slide:last-child{page-break-after:auto;}
 
 /* ---------- Cabecera de slide ---------- */
-.slide-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+/* El renglón de encabezado deja libre la esquina derecha: ahí va la marca, en
+   todas las slides y siempre en el mismo punto. Lo que antes ocupaba esa
+   esquina —la pill de riesgo, el monto destacado— pasa a este renglón, que es
+   donde ya viven los metadatos de la slide. */
+.slide-top{display:flex;align-items:center;gap:10px;margin-bottom:14px;
+  padding-right:150px;min-height:20px;}
 .slide-badge{width:19px;height:19px;border-radius:var(--r-full);
   background:var(--black);color:var(--white);font-size:9px;font-weight:600;
   display:flex;align-items:center;justify-content:center;line-height:1;
@@ -48,6 +53,18 @@
 .slide.dense{padding:34px 52px 34px;}
 .slide.dense .slide-sub{margin-bottom:11px;}
 .slide.dense .slide-title + .slide-body{margin-top:11px;}
+/* Tabla angosta: con dos o tres columnas, el 100% de ancho separa tanto las
+   celdas que la fila deja de leerse como una unidad. Se acota el ancho y sube
+   el cuerpo, que es lo contrario de lo que pide una tabla de cartera. */
+.tabla-chica{max-width:660px;}
+.tabla-chica table.mc{font-size:12.5px;}
+.tabla-chica table.mc thead th{padding:10px 14px;font-size:9.5px;}
+.tabla-chica table.mc tbody td{padding:11px 14px;}
+/* Remate de slide: el filete navy y una línea sola, para cerrar. */
+.remate{margin-top:34px;border-left:3px solid var(--navy);padding:6px 0 6px 20px;
+  font-size:14px;font-weight:600;line-height:1.4;color:var(--black);
+  text-wrap:pretty;}
+.slide.dense .remate{font-size:12px;margin-top:24px;}
 .slide.dense table.mc{font-size:8.4px;}
 .slide.dense table.mc thead th{padding:5px 6px;font-size:7.4px;}
 .slide.dense table.mc tbody td{padding:4.4px 6px;}
@@ -72,15 +89,23 @@
    porque es la firma de la marca en la primera hoja. */
 .cover-top{display:flex;align-items:center;justify-content:space-between;gap:24px;}
 .cover-top-left{display:flex;align-items:center;gap:14px;min-width:0;}
-.cover-client{font-size:9px;font-weight:600;text-transform:uppercase;
-  letter-spacing:0.16em;color:rgba(255,255,255,0.72);}
 .cover-year{background:rgba(255,255,255,0.14);border:1px solid rgba(255,255,255,0.28);
   border-radius:var(--r-full);padding:3px 12px;font-size:9px;font-weight:600;
   letter-spacing:0.06em;color:var(--white);}
-.cover-title{margin:auto 0 0;font-size:52px;font-weight:400;letter-spacing:-0.035em;
-  line-height:1.06;color:var(--white);max-width:660px;text-wrap:balance;}
-.cover-sub{margin:16px 0 0;font-size:14px;line-height:1.5;
-  color:rgba(255,255,255,0.78);max-width:560px;text-wrap:pretty;}
+/* El héroe de la portada es el nombre del cliente, no el tipo de documento: lo
+   primero que se lee es para quién está hecha. El cuerpo lo fija el generador
+   según el largo del nombre — "Ana Ruiz" y "Fundación Ejemplo del Sur" no
+   entran en el mismo tamaño. El filete a la derecha cierra el bloque. */
+.cover-hero{margin:auto 0 0;}
+.cover-eyebrow{display:block;font-size:9px;font-weight:600;text-transform:uppercase;
+  letter-spacing:0.18em;color:rgba(255,255,255,0.55);margin:0 0 16px;}
+.cover-name{display:inline-block;margin:0;font-weight:700;letter-spacing:-0.035em;
+  line-height:1.02;color:var(--white);max-width:820px;text-wrap:balance;
+  padding-right:26px;border-right:1px solid rgba(255,255,255,0.32);}
+.cover-doc{margin:20px 0 0;font-size:26px;font-weight:400;letter-spacing:-0.02em;
+  line-height:1.2;color:rgba(255,255,255,0.92);max-width:660px;text-wrap:balance;}
+.cover-sub{margin:12px 0 0;font-size:14px;line-height:1.5;
+  color:rgba(255,255,255,0.70);max-width:560px;text-wrap:pretty;}
 /* El pie de portada y el logo van en el flujo (no absolutos) para que nunca se
    pisen entre sí, sin importar cuánto ocupe el nombre del asesor. */
 .cover-foot{margin-top:34px;display:flex;align-items:flex-end;
@@ -93,7 +118,15 @@
   line-height:1.3;}
 .cover-by .k-note{display:block;font-size:9px;color:rgba(255,255,255,0.6);
   margin-top:2px;}
-.cover-date{font-size:9.5px;color:rgba(255,255,255,0.6);text-align:right;
+.cover-meta{text-align:right;flex-shrink:0;}
+/* Cuando la portada no lleva bloque de contacto, el pie queda pegado a la
+   izquierda: ahí las dos líneas se alinean por ese mismo eje y no por el
+   borde derecho del bloque, que las deja colgadas. */
+.cover-foot:not(:has(.cover-by)) .cover-meta{text-align:left;}
+.cover-conf{font-size:8.5px;font-weight:600;text-transform:uppercase;
+  letter-spacing:0.14em;color:rgba(255,255,255,0.45);margin-bottom:6px;
+  white-space:nowrap;}
+.cover-date{font-size:9.5px;color:rgba(255,255,255,0.6);text-align:inherit;
   white-space:nowrap;}
 .cover-logo{flex-shrink:0;margin-right:-20px;margin-top:-8px;}
 
@@ -112,6 +145,30 @@
 .divider-client{position:absolute;left:52px;bottom:40px;font-size:8px;
   font-weight:600;text-transform:uppercase;letter-spacing:0.14em;
   color:rgba(255,255,255,0.45);}
+
+/* ---------- Slide oscura: la línea de tiempo ----------
+   Mismo degradado que el divisor. Va a fondo completo porque es la slide que el
+   cliente se lleva de la reunión, y el contraste la separa de todo lo demás. */
+.slide.oscura{color:var(--white);
+  background:linear-gradient(115deg,#050505 0%,#0B2545 48%,#00396F 78%,#006FEE 130%);}
+.slide.oscura .slide-art{position:absolute;inset:0;
+  background:linear-gradient(120deg,#0B2545 0%,#00396F 58%,#006FEE 145%);}
+.slide.oscura .slide-badge{background:var(--white);color:var(--navy);}
+.slide.oscura .slide-client{color:rgba(255,255,255,0.55);}
+.slide.oscura .slide-title{color:var(--white);}
+.slide.oscura .slide-sub{color:rgba(255,255,255,0.72);}
+.slide.oscura .fnote,.slide.oscura .fbrand{color:rgba(255,255,255,0.45);}
+
+.hitos{display:grid;gap:34px;}
+.hitos.h2{grid-template-columns:repeat(2,1fr);}
+.hitos.h3{grid-template-columns:repeat(3,1fr);}
+.hitos.h4{grid-template-columns:repeat(4,1fr);gap:26px;}
+.hito{border-top:1px solid rgba(255,255,255,0.35);padding-top:16px;}
+.hito-label{display:block;font-size:9.5px;font-weight:600;text-transform:uppercase;
+  letter-spacing:0.14em;color:var(--white);margin-bottom:14px;}
+.hito-num{color:rgba(255,255,255,0.5);margin-right:9px;}
+.hito p{margin:0;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.85);
+  text-wrap:pretty;}
 
 /* ---------- Slide de cierre ---------- */
 .slide.closing{padding:0;background:var(--black);color:var(--white);}
@@ -140,9 +197,26 @@
 .split{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start;}
 .split.wide-left{grid-template-columns:1.55fr 1fr;}
 .split.wide-right{grid-template-columns:1fr 1.55fr;}
+/* Las dos columnas miden lo mismo de alto: sirve cuando una de ellas es una
+   caja con fondo, que si no queda flotando contra la otra. */
+.split.igual{align-items:stretch;}
 .cols.c2{grid-template-columns:1fr 1fr;}
 .cols.c3{grid-template-columns:repeat(3,1fr);}
 .cols.c4{grid-template-columns:repeat(4,1fr);gap:18px;}
+/* Columnas como tarjetas: fondo gris y filete navy arriba. Todas miden lo mismo
+   de alto, porque son piezas que se comparan entre sí y una más corta que la
+   otra se lee como menos importante. */
+.cols.tarjetas{align-items:stretch;gap:26px;}
+.cols.tarjetas .col{background:var(--gray);border-top:3px solid var(--navy);
+  padding:24px 26px;}
+.cols.tarjetas .col-label{display:block;font-size:9px;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.14em;color:var(--caption);
+  margin:0 0 13px;}
+.cols.tarjetas .col h5{font-size:19px;font-weight:600;letter-spacing:-0.02em;
+  line-height:1.22;margin:0 0 14px;text-wrap:balance;}
+.cols.tarjetas .col p{font-size:11px;line-height:1.6;margin-bottom:9px;}
+.slide.dense .cols.tarjetas .col h5{font-size:16px;}
+.slide.dense .cols.tarjetas .col p{font-size:9.6px;}
 .dist-wrap.d2{grid-template-columns:1fr 1fr;}
 .dist-wrap.d3{grid-template-columns:repeat(3,1fr);}
 .pasos.p2{grid-template-columns:1fr 1fr;}
@@ -174,19 +248,42 @@
    una de donut, puestas lado a lado, tengan el mismo peso óptico. */
 .donut-card{display:flex;flex-direction:column;}
 .donut-card .bars{margin-top:auto;margin-bottom:auto;}
+/* Y el donut con su leyenda, igual: cuando la tarjeta más alta de la fila
+   es una de barras largas, el donut quedaba colgado arriba con todo el aire
+   acumulado abajo. Centrado, el recuadro deja de leerse como vacío. */
+.donut-card .donut-row{margin-top:auto;margin-bottom:auto;}
 
 /* ---------- Perfil del inversor ----------
    Se lee como una ficha de datos: etiqueta a la izquierda, dato a la derecha,
    una línea por rasgo. El registro es deliberadamente sobrio — es material para
    que el cliente confirme o corrija, no para persuadirlo. */
 .rasgos{display:flex;flex-direction:column;}
-.rasgo{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
-  padding:8px 0;border-bottom:1px solid var(--hairline);}
+/* Dos columnas fijas y todo alineado a la izquierda: con el dato pegado al
+   margen derecho, cada fila arrancaba en un lugar distinto y la ficha perdía
+   el eje. La etiqueta manda el ancho; el dato empieza siempre en el mismo x. */
+.rasgo{display:grid;grid-template-columns:126px 1fr;align-items:baseline;gap:18px;
+  padding:9px 0;border-bottom:1px solid var(--hairline);}
 .rasgo:last-child{border-bottom:none;}
 .r-label{font-size:9px;font-weight:600;text-transform:uppercase;
-  letter-spacing:0.07em;color:var(--caption);flex-shrink:0;}
-.r-valor{font-size:11px;font-weight:600;color:var(--black);text-align:right;
-  line-height:1.35;}
+  letter-spacing:0.07em;color:var(--caption);line-height:1.4;}
+.r-valor{font-size:11px;font-weight:600;color:var(--black);line-height:1.45;
+  text-wrap:pretty;}
+
+/* Recuadro de lo que no se negocia. Fondo gris de marca y filete navy a la
+   izquierda: es el único bloque de la slide que pide la vista primero. */
+.perfil-destacado{background:var(--gray);border-left:4px solid var(--navy);
+  padding:22px 24px;height:100%;display:flex;flex-direction:column;
+  justify-content:center;gap:18px;}
+.d-titulo{font-size:9px;font-weight:600;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--caption);}
+.d-item h5{margin:0 0 5px;font-size:13.5px;font-weight:600;color:var(--black);
+  letter-spacing:-0.01em;line-height:1.3;}
+.d-item p{margin:0;font-size:10.5px;line-height:1.55;color:var(--gray-d);
+  text-wrap:pretty;}
+.slide.dense .d-item h5{font-size:12px;}
+.slide.dense .d-item p{font-size:9.6px;}
+.rasgos + .perfil-texto{margin-top:18px;padding-top:16px;
+  border-top:1px solid var(--gray-line);}
 .perfil-texto p{margin:0 0 9px;font-size:11px;line-height:1.6;color:var(--gray-d);
   text-wrap:pretty;}
 .perfil-texto p:last-child{margin-bottom:0;}
@@ -221,8 +318,12 @@
 .accion-item:last-child{border-bottom:none;}
 .accion-item .ai-top{display:flex;justify-content:space-between;gap:8px;
   align-items:baseline;}
+/* `text-wrap:balance`: si el nombre no entra en un renglón, parte en dos
+   renglones parejos en vez de dejar la última palabra sola abajo. "Cuenta
+   Administrada CEDEARs de / ETFs" pasa a "Cuenta Administrada / CEDEARs de
+   ETFs". Ver criterio 82. */
 .accion-item .ai-name{font-size:10px;font-weight:600;color:var(--black);
-  line-height:1.25;min-width:0;}
+  line-height:1.25;min-width:0;text-wrap:balance;}
 .accion-item .ai-amt{font-size:9.4px;font-weight:600;color:var(--gray-d);
   font-variant-numeric:tabular-nums;white-space:nowrap;}
 .accion-item .ai-why{font-size:8.6px;line-height:1.4;color:var(--caption);
@@ -314,10 +415,6 @@
   line-height:1.3;}
 .delta.destacado .d-label{color:rgba(255,255,255,0.55);}
 .delta.destacado .d-valor,.delta.destacado .d-nota{color:var(--white);}
-/* Con menos de tres tarjetas la grilla igual reserva tres columnas: las cajas
-   conservan su tamaño y el sobrante queda vacío a la derecha, en vez de que dos
-   tarjetas se estiren a media lámina cada una. El texto va centrado. */
-.deltas.pocas .delta{text-align:center;}
 .slide.dense .deltas{margin-bottom:13px;gap:9px;}
 .slide.dense .delta{padding:8px 10px;}
 .slide.dense .d-valor{font-size:16px;}
@@ -330,11 +427,73 @@
 /* Nivel de riesgo de la slide, arriba a la derecha y ROTULADO. La pastilla
    sola no se entiende: quien ve la propuesta por primera vez no sabe que ese
    "Alto" se refiere al riesgo del vehículo. */
-.slide-riesgo{position:absolute;top:32px;right:52px;display:flex;
-  align-items:center;gap:9px;z-index:2;}
+.slide-riesgo{margin-left:auto;display:flex;
+  align-items:center;gap:9px;}
 .r-rotulo{font-size:8px;font-weight:600;text-transform:uppercase;
   letter-spacing:0.1em;color:var(--caption);}
 /* El monto destacado de la esquina. Mismo peso visual que la pill de riesgo a
    la que reemplaza, para que la cabecera no se mueva entre slides. */
 .r-monto{font-size:15px;font-weight:700;color:var(--navy);
   letter-spacing:-0.01em;line-height:1;}
+
+/* Tres gráficos por fila: cada tarjeta mide un tercio de la lámina y el donut no
+   entra al lado de su leyenda —se pasaba del borde y los porcentajes quedaban
+   sobre el filete—. Se apilan: donut arriba, leyenda debajo. Apilados no
+   compiten por el ancho, así que el donut CRECE a 132px (lo pone el generador)
+   en vez de achicarse, y llena el alto que le impone la tarjeta más alta de la
+   fila, que suele ser una de barras largas. Ver criterio 86. */
+.dist-wrap.n3 .donut-row{flex-direction:column;gap:12px;}
+/* Apilados y en fila de tres, los donuts se alinean ARRIBA, no centrados: el
+   grid estira las tarjetas al mismo alto, así que centrar hacía que la de
+   leyenda corta bajara el donut y la de leyenda larga lo subiera — ni los
+   donuts ni el arranque de las leyendas quedaban a la misma altura. Acota el
+   centrado de la v1.6 (`.donut-card .donut-row`, criterio 86) al caso de una
+   tarjeta sola: entre hermanas, alinear gana. Lleva `.donut-card` en el
+   selector para ganarle por especificidad — ver criterio 92. */
+.dist-wrap.n3 .donut-card .donut-row{margin-top:0;margin-bottom:auto;}
+.dist-wrap.n3 table.donut-legend{font-size:8.2px;}
+.dist-wrap.n3 .donut-legend-row .dl-val{padding-left:12px;}
+.dist-wrap.n3 .donut-legend-row .dot{margin-right:5px;}
+
+/* Captura dentro de una lámina de KPIs (campo `imagen`). La imagen a la izquierda
+   con su título y un valor destacado; las tarjetas en dos columnas a la derecha.
+   El recuadro de la imagen se queda con su alto natural (`align-self:start`): no
+   se estira ni deja aire debajo de la captura. Las tarjetas sí se estiran al
+   alto de la fila. La imagen va a lo ancho con alto automático, así que nunca
+   se deforma. Ver criterio 87. */
+.kpi-img-wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;}
+.kpi-img-card{align-self:start;border:1px solid var(--gray-line);
+  border-radius:var(--r-lg);padding:11px 13px;min-width:0;}
+.kpi-img-card h4{margin:0 0 4px;font-size:9.5px;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.04em;color:var(--black);}
+.kpi-img-valor{font-size:22px;font-weight:600;letter-spacing:-0.02em;
+  color:var(--black);line-height:1.15;margin-bottom:8px;
+  font-variant-numeric:tabular-nums;}
+.kpi-img{display:block;width:100%;height:auto;}
+/* Las tarjetas NO se estiran al alto de la captura: alto fijo y el grupo
+   centrado. Estirándose, su proporción la decidía la imagen —una captura
+   más alta daba tarjetas más altas— y dos láminas seguidas con capturas de
+   distinta proporción hacían saltar las tarjetas al pasar de una a otra. */
+/* Lleva .hero en el selector a propósito: sin él, `.kpi-grid.hero .kpi`
+   gana por especificidad, la tarjeta conserva su min-height de 132px
+   dentro de una fila de 120 y se derrama sobre la fila de abajo. */
+.kpi-grid.hero.kpi-img-grid{align-self:center;grid-template-columns:1fr 1fr;
+  grid-auto-rows:120px;}
+.kpi-grid.hero.kpi-img-grid .kpi{min-height:0;}
+/* Variante "posicion": "abajo": las tarjetas arriba, en una fila a lo
+   ancho, y la captura debajo ocupando toda la lámina. Para capturas muy
+   apaisadas, que en media slide quedan ilegibles. */
+.kpi-img-stack{display:flex;flex-direction:column;gap:12px;}
+/* El bloque toma el alto que queda y la captura crece hasta donde entra:
+   max-width y max-height la acotan por el lado que se llene primero, con
+   width y height en auto, así que conserva su proporción exacta. */
+.slide-body > .kpi-img-stack{flex:1 1 auto;min-height:0;}
+.kpi-img-stack .kpi-grid{flex:0 0 auto;}
+.kpi-img-stack .kpi-img-card{align-self:stretch;flex:1 1 auto;min-height:0;
+  display:flex;flex-direction:column;}
+.kpi-img-stack .kpi-img-card .kpi-img{width:auto;height:auto;max-width:100%;
+  max-height:100%;min-height:0;margin:0 auto;}
+.kpi-img-ancho{flex:1 1 auto;min-height:0;display:flex;align-items:center;
+  justify-content:center;padding:9px 11px;
+  border:1px solid var(--gray-line);border-radius:var(--r-lg);}
+.kpi-img-ancho .kpi-img{width:auto;height:auto;max-width:100%;max-height:100%;}

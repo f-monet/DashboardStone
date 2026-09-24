@@ -1,0 +1,124 @@
+{
+  "cliente": { "nombre": "Valeria Azzato" },
+  "asesores": [
+    { "nombre": "Francisco José Monet", "email": "fmonet@max.capital", "telefono": "11 5928 7717" }
+  ],
+  "fecha": "24/09/2026",
+  "anio": "2026",
+  "titulo": "Propuesta de Inversión",
+  "subtitulo": "Que el capital que tenés afuera deje de estar parado, sin salir de la lógica por la que lo dejaste ahí.",
+  "objetivo": "Invertir el capital hoy inactivo en la cuenta de EE.UU., migrando a una cuenta en Max Uruguay con fondos UCITS",
+  "capitulos": [
+    {
+      "tipo": "perfil",
+      "titulo": "Punto de partida",
+      "subtitulo": "Esto es lo que entendimos de tu situación. Si algo no coincide, corrijámoslo antes de avanzar.",
+      "rasgos": [
+        { "label": "Perfil de riesgo", "valor": "Conservador" },
+        { "label": "Capital hoy afuera", "valor": "USD 100.000, en una cuenta remunerada en EE.UU." },
+        { "label": "Estado actual", "valor": "Sin invertir — perdiendo costo de oportunidad" },
+        { "label": "Para qué usás esta plata", "valor": "Disponible para cuando viajás" }
+      ],
+      "notas": [
+        "La cuenta remunerada te paga 2%, pero entre costos y el tratamiento impositivo para un no residente, el neto no te cierra.",
+        "Dejás ese capital afuera a propósito, para cuando viajás — no buscás repatriarlo. Este planteo respeta eso: el capital sigue afuera, sólo que empieza a trabajar."
+      ],
+      "puntos": [
+        "El capital se mantiene afuera, ahora en una cuenta de Max Uruguay.",
+        "Se invierte en fondos UCITS — domiciliados en Europa, no en Estados Unidos.",
+        "Mantiene una porción líquida, pensada para que sigas teniendo disponibilidad cuando la necesites."
+      ]
+    },
+    {
+      "tipo": "texto",
+      "titulo": "Por qué mover la cuenta, no el país",
+      "columnas": [
+        { "titulo": "Lo que pasa hoy", "parrafos": [
+          "El capital está en una cuenta con sede en Estados Unidos, sin invertir.",
+          "Para un no residente de EE.UU., mantener activos con sede allí por este orden de magnitud puede generar exposición al impuesto sucesorio americano — el umbral para no residentes es bajo." ] },
+        { "titulo": "Qué cambia con Max Uruguay", "parrafos": [
+          "La cuenta pasa a estar en Max Uruguay, y el capital se invierte en fondos UCITS: vehículos domiciliados en Europa, no en Estados Unidos.",
+          "Seguís teniendo el capital afuera, disponible en dólares — pero ahora invertido, en vez de parado." ] }
+      ],
+      "nota": "Esto no reemplaza el asesoramiento impositivo puntual sobre tu situación — es el criterio general por el que se arma la cartera así."
+    },
+    {
+      "tipo": "cartera_sugerida",
+      "titulo": "Cartera sugerida — Cuenta Max Uruguay",
+      "subtitulo": "Perfil conservador, en fondos UCITS domiciliados en Europa.",
+      "columnas": ["clase", "descripcion", "riesgo", "ponderacion", "monto"],
+      "kpis": [
+        { "label": "Capital a invertir", "valor": "USD 100.000", "accent": true }
+      ],
+      "items": [
+        { "clase": "Renta Fija", "descripcion": "CSHU — Ultrashort Bond", "riesgo": "Bajo", "ponderacion": "15,0%", "monto": "USD 15.000" },
+        { "clase": "Renta Fija", "descripcion": "SDIA — Short Duration Corp Bond", "riesgo": "Bajo", "ponderacion": "20,0%", "monto": "USD 20.000" },
+        { "clase": "Renta Fija", "descripcion": "IUAA — US Aggregate Bond (Acc)", "riesgo": "Bajo", "ponderacion": "20,0%", "monto": "USD 20.000" },
+        { "clase": "Renta Fija", "descripcion": "ITPS — TIPS (inflación)", "riesgo": "Bajo", "ponderacion": "10,0%", "monto": "USD 10.000" },
+        { "clase": "Renta Fija", "descripcion": "IEMB — EM Bond", "riesgo": "Medio", "ponderacion": "10,0%", "monto": "USD 10.000" },
+        { "clase": "Renta Variable", "descripcion": "IWDA — MSCI World (Acc)", "riesgo": "Alto", "ponderacion": "20,0%", "monto": "USD 20.000" },
+        { "clase": "Multi-Activo", "descripcion": "MACA — Multi-Asset Moderate", "riesgo": "Medio", "ponderacion": "5,0%", "monto": "USD 5.000" }
+      ],
+      "total": { "clase": "Total", "ponderacion": "100,0%", "monto": "USD 100.000" },
+      "grafico": { "titulo": "Composición", "items": [
+        { "label": "Renta Fija", "valor": 75 },
+        { "label": "Renta Variable", "valor": 20 },
+        { "label": "Multi-Activo", "valor": 5 }
+      ] },
+      "nota": "Todos los fondos son UCITS domiciliados en Europa, clase acumulativa: reinvierten internamente en vez de distribuir, sin que tengas que reinvertir vos cada pago."
+    },
+    {
+      "tipo": "instrumentos",
+      "titulo": "Qué hace cada componente",
+      "fichas": [
+        {
+          "nombre": "CSHU — Ultrashort Bond",
+          "riesgo": "Bajo",
+          "que_hace": "Es la porción líquida de la cuenta: duration mínima, pensada para que sigas teniendo disponibilidad cuando la necesites, como cuando viajás.",
+          "datos": [ { "label": "Duration", "valor": "Ultra corta" }, { "label": "Moneda", "valor": "USD" } ]
+        },
+        {
+          "nombre": "SDIA — Short Duration Corp Bond",
+          "riesgo": "Bajo",
+          "que_hace": "El núcleo conservador: crédito corporativo de duration corta, para que el capital rinda sin exponerse de más a la tasa.",
+          "datos": [ "Corporativo grado inversión" ]
+        },
+        {
+          "nombre": "IUAA — US Aggregate Bond (Acc)",
+          "riesgo": "Bajo",
+          "que_hace": "Suma diversificación dentro de la renta fija: gobierno y corporativo en un solo vehículo, con acumulación automática.",
+          "datos": [ "Clase acumulativa" ]
+        },
+        {
+          "nombre": "ITPS — TIPS (inflación)",
+          "riesgo": "Bajo",
+          "que_hace": "Protege el poder de compra del capital: el cupón ajusta por inflación en dólares.",
+          "datos": [ "Bonos del Tesoro de EE.UU. ajustados por inflación" ]
+        },
+        {
+          "nombre": "IWDA — MSCI World (Acc)",
+          "riesgo": "Alto",
+          "que_hace": "Es la porción de crecimiento: acciones globales diversificadas — EE.UU., Europa y Asia en un solo fondo —, para que el capital no dependa sólo de la renta fija.",
+          "datos": [ "Diversificación global" ]
+        },
+        {
+          "nombre": "MACA — Multi-Asset Moderate",
+          "riesgo": "Medio",
+          "que_hace": "Una porción chica con su propio mix de activos, como complemento táctico al resto de la cartera.",
+          "datos": [ "Multi-activo" ]
+        }
+      ]
+    },
+    {
+      "tipo": "forma_de_trabajo",
+      "titulo": "Cómo trabajamos",
+      "intro": "Nuestro rol es el de asesor: administramos la cartera para vos, con honorario sobre los activos, no por transacción.",
+      "pasos": [
+        { "titulo": "Abrimos la cuenta en Max Uruguay", "texto": "El capital pasa de la cuenta remunerada en EE.UU. a una cuenta a tu nombre en Max Uruguay." },
+        { "titulo": "Invertimos en fondos UCITS", "texto": "Domiciliados en Europa, con la composición que ya vimos." },
+        { "titulo": "Rebalanceamos periódicamente", "texto": "Ajustamos la cartera para sostener el perfil conservador en el tiempo." },
+        { "titulo": "Reporting permanente", "texto": "Acceso a la cuenta y reporting, para que siempre sepas dónde está tu capital." }
+      ]
+    }
+  ]
+}

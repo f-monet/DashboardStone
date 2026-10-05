@@ -1,0 +1,91 @@
+{
+  "cliente": { "nombre": "Martina Chau" },
+  "asesores": [
+    { "nombre": "Francisco José Monet", "email": "fmonet@max.capital", "telefono": "11 5928 7717" }
+  ],
+  "fecha": "05/10/2026",
+  "anio": "2026",
+  "titulo": "Propuesta de Inversión",
+  "subtitulo": "El primer paso del fondo de retiro que querías tener resuelto antes de los 35.",
+  "objetivo": "Empezar a construir el fondo de retiro, con un horizonte largo y un perfil que se achica con el tiempo",
+  "capitulos": [
+    {
+      "tipo": "perfil",
+      "titulo": "Punto de partida",
+      "subtitulo": "Esto es lo que entendimos de nuestra conversación. Si algo no coincide, corrijámoslo antes de avanzar.",
+      "rasgos": [
+        { "label": "Edad", "valor": "34 años" },
+        { "label": "Horizonte", "valor": "26-31 años (retiro estimado entre los 60 y 65)" },
+        { "label": "Perfil de riesgo", "valor": "Moderado / arriesgado" }
+      ],
+      "notas": [
+        "Dijiste que antes de tus 35 querías ocuparte del fondo de retiro — este es ese primer paso.",
+        "Con un horizonte de 26 a 31 años, el fondo puede arrancar con más peso en renta variable e ir reduciéndolo a medida que se acerca el retiro."
+      ],
+      "puntos": [
+        "Arranca con más peso en renta variable, dado el horizonte largo.",
+        "El riesgo se va reduciendo con el tiempo, no se mantiene fijo.",
+        "El aporte —inicial y/o mensual— lo definimos juntos en la reunión."
+      ]
+    },
+    {
+      "tipo": "glidepath",
+      "titulo": "Cómo evoluciona el fondo con el tiempo",
+      "tramos": [
+        { "label": "34", "acciones": 70, "nota": "2026 · hoy" },
+        { "label": "50", "acciones": 55, "nota": "Mitad de camino" },
+        { "label": "62", "acciones": 35, "nota": "Retiro estimado", "tentativo": true }
+      ],
+      "etiqueta_variable": "Renta variable",
+      "etiqueta_fija": "Renta fija",
+      "nota": "El tramo de retiro es estimado: se ajusta con el tiempo, no es un compromiso fijo desde hoy."
+    },
+    {
+      "tipo": "cartera_sugerida",
+      "titulo": "Cartera sugerida — punto de partida",
+      "subtitulo": "Perfil moderado/arriesgado para un horizonte de más de 25 años.",
+      "columnas": ["clase", "descripcion", "riesgo", "ponderacion"],
+      "items": [
+        { "clase": "Renta Variable", "descripcion": "Cartera CEDEARs de ETFs", "riesgo": "Alto", "ponderacion": "70,0%" },
+        { "clase": "Renta Fija", "descripcion": "FCI Max Renta Fija Dólares", "riesgo": "Bajo", "ponderacion": "30,0%" }
+      ],
+      "total": { "clase": "Total", "ponderacion": "100,0%" },
+      "grafico": { "titulo": "Composición", "items": [
+        { "label": "Renta Variable", "valor": 70 },
+        { "label": "Renta Fija", "valor": 30 }
+      ] },
+      "nota": "Esta ponderación es el punto de partida del glidepath — se ajusta con el aporte real y con el tiempo."
+    },
+    {
+      "tipo": "instrumentos",
+      "titulo": "Qué hace cada componente",
+      "fichas": [
+        {
+          "nombre": "Cartera CEDEARs de ETFs",
+          "tipo": "Cuenta administrada",
+          "riesgo": "Alto",
+          "que_hace": "Es el motor de crecimiento del fondo: con más de 25 años de horizonte, es la porción que busca capturar el rendimiento de mercados globales en el largo plazo.",
+          "datos": [ { "label": "Horizonte", "valor": "Largo plazo" }, { "label": "Diversificación", "valor": "Sectores, regiones y clases de activo" } ]
+        },
+        {
+          "nombre": "FCI Max Renta Fija Dólares",
+          "tipo": "Fondo propio",
+          "riesgo": "Bajo",
+          "que_hace": "Es el ancla estable del fondo: mantiene una porción en dólares, líquida y de bajo riesgo, que va a ir pesando más a medida que se acerca el retiro.",
+          "datos": [ { "label": "Rescate", "valor": "24 horas" }, { "label": "Moneda", "valor": "USD" } ]
+        }
+      ]
+    },
+    {
+      "tipo": "forma_de_trabajo",
+      "titulo": "Cómo arrancamos",
+      "intro": "Nuestro rol es el de asesor: administramos el fondo para vos, y lo vamos ajustando a medida que pasa el tiempo.",
+      "pasos": [
+        { "titulo": "Definimos el aporte", "texto": "Inicial y/o mensual — lo que te resulte sostenible." },
+        { "titulo": "Abrimos la cuenta", "texto": "A tu nombre, con la cartera de arranque que ya vimos." },
+        { "titulo": "Rebalanceamos con el tiempo", "texto": "Seguimos el glidepath, bajando el riesgo a medida que se acerca el retiro." },
+        { "titulo": "Reporting permanente", "texto": "Para que siempre sepas cómo viene el fondo." }
+      ]
+    }
+  ]
+}

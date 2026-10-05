@@ -1,0 +1,83 @@
+{
+  "cliente": { "nombre": "Martina Chau y Javier" },
+  "asesores": [
+    { "nombre": "Francisco José Monet", "email": "fmonet@max.capital", "telefono": "11 5928 7717" }
+  ],
+  "fecha": "05/10/2026",
+  "anio": "2026",
+  "titulo": "Propuesta de Inversión",
+  "subtitulo": "Que la plata del consultorio deje de perder poder adquisitivo, lista para cuando aparezca la casa.",
+  "objetivo": "Invertir el capital del consultorio hoy parado en una caja de seguridad, preservando capital con vista a la compra de una propiedad",
+  "capitulos": [
+    {
+      "tipo": "perfil",
+      "titulo": "Punto de partida",
+      "subtitulo": "Esto es lo que entendimos de nuestra conversación. Si algo no coincide, corrijámoslo antes de avanzar.",
+      "rasgos": [
+        { "label": "Perfil de riesgo", "valor": "Conservador" },
+        { "label": "Capital a invertir", "valor": "USD 80.000" },
+        { "label": "Dónde está hoy", "valor": "En una caja de seguridad, sin rendimiento" },
+        { "label": "Objetivo", "valor": "Comprar una propiedad — horizonte flexible, ~2 años" }
+      ],
+      "notas": [
+        "Saben que, parada en la caja de seguridad, esa plata pierde poder adquisitivo año tras año.",
+        "El objetivo final es la propiedad, pero no hay apuro: el horizonte de ~2 años es flexible, así que la cartera prioriza preservar el capital y mantenerlo disponible, no maximizar riesgo."
+      ],
+      "puntos": [
+        "Capital en dólares, con foco en preservación.",
+        "Liquidez para poder usarlo cuando aparezca la propiedad.",
+        "Dos vehículos administrados, sin que tengan que elegir instrumento por instrumento."
+      ]
+    },
+    {
+      "tipo": "cartera_sugerida",
+      "titulo": "Cartera sugerida",
+      "subtitulo": "Foco en preservación de capital, con liquidez para la compra futura.",
+      "columnas": ["clase", "descripcion", "riesgo", "ponderacion", "monto"],
+      "kpis": [
+        { "label": "Capital a invertir", "valor": "USD 80.000", "accent": true }
+      ],
+      "items": [
+        { "clase": "Renta Fija", "descripcion": "FCI Max Renta Fija Dólares", "riesgo": "Bajo", "ponderacion": "80,0%", "monto": "USD 64.000" },
+        { "clase": "Renta Variable", "descripcion": "Cartera CEDEARs de ETFs", "riesgo": "Alto", "ponderacion": "20,0%", "monto": "USD 16.000" }
+      ],
+      "total": { "clase": "Total", "ponderacion": "100,0%", "monto": "USD 80.000" },
+      "grafico": { "titulo": "Composición", "items": [
+        { "label": "Renta Fija", "valor": 80 },
+        { "label": "Renta Variable", "valor": 20 }
+      ] },
+      "nota": "El horizonte es flexible: si la compra de la propiedad se corre en el tiempo, la cartera puede sostenerse sin cambios."
+    },
+    {
+      "tipo": "instrumentos",
+      "titulo": "Qué hace cada componente",
+      "fichas": [
+        {
+          "nombre": "FCI Max Renta Fija Dólares",
+          "tipo": "Fondo propio",
+          "riesgo": "Bajo",
+          "que_hace": "Es el núcleo de la cartera: mantiene el capital en dólares, líquido y de bajo riesgo, listo para cuando lo necesiten para la compra.",
+          "datos": [ { "label": "Rescate", "valor": "24 horas" }, { "label": "Moneda", "valor": "USD" } ]
+        },
+        {
+          "nombre": "Cartera CEDEARs de ETFs",
+          "tipo": "Cuenta administrada",
+          "riesgo": "Alto",
+          "que_hace": "Es la porción que busca algo más de crecimiento, aprovechando que el horizonte es flexible y puede estirarse si la compra se corre en el tiempo.",
+          "datos": [ { "label": "Horizonte", "valor": "Largo plazo" }, { "label": "Diversificación", "valor": "Sectores, regiones y clases de activo" } ]
+        }
+      ]
+    },
+    {
+      "tipo": "forma_de_trabajo",
+      "titulo": "Cómo trabajamos",
+      "intro": "Nuestro rol es el de asesor: administramos la cartera para los dos, con foco en que el capital esté disponible cuando lo necesiten.",
+      "pasos": [
+        { "titulo": "Abrimos la cuenta", "texto": "A nombre de los dos." },
+        { "titulo": "Fondeamos con el capital", "texto": "Los USD 80.000 que hoy están en la caja de seguridad." },
+        { "titulo": "Rebalanceamos periódicamente", "texto": "Sosteniendo el foco en preservación de capital." },
+        { "titulo": "Reporting permanente", "texto": "Para que los dos sepan siempre cómo viene la cartera." }
+      ]
+    }
+  ]
+}

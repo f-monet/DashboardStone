@@ -14,16 +14,16 @@
       "titulo": "Punto de partida",
       "subtitulo": "Esto es lo que entendimos de nuestra conversación. Si algo no coincide, corrijámoslo antes de avanzar.",
       "rasgos": [
-        { "label": "Edad", "valor": "34 años" },
-        { "label": "Horizonte", "valor": "26-31 años (retiro estimado entre los 60 y 65)" },
+        { "label": "Edad", "valor": "35 años" },
+        { "label": "Horizonte", "valor": "25-30 años (retiro estimado entre los 60 y 65)" },
         { "label": "Perfil de riesgo", "valor": "Moderado / arriesgado" }
       ],
       "notas": [
         "Dijiste que antes de tus 35 querías ocuparte del fondo de retiro — este es ese primer paso.",
-        "Con un horizonte de 26 a 31 años, el fondo puede arrancar con más peso en renta variable e ir reduciéndolo a medida que se acerca el retiro."
+        "Sin hijos y con buen ingreso presente de tus dos consultorios, tenés más capacidad de riesgo que el punto de partida típico — por eso el fondo arranca con más peso en renta variable de lo habitual."
       ],
       "puntos": [
-        "Arranca con más peso en renta variable, dado el horizonte largo.",
+        "Arranca con peso fuerte en renta variable (80%), dado el horizonte largo y la ausencia de dependientes hoy.",
         "El riesgo se va reduciendo con el tiempo, no se mantiene fijo.",
         "El aporte —inicial y/o mensual— lo definimos juntos en la reunión."
       ]
@@ -32,7 +32,7 @@
       "tipo": "glidepath",
       "titulo": "Cómo evoluciona el fondo con el tiempo",
       "tramos": [
-        { "label": "34", "acciones": 70, "nota": "2026 · hoy" },
+        { "label": "35", "acciones": 80, "nota": "2026 · hoy" },
         { "label": "50", "acciones": 55, "nota": "Mitad de camino" },
         { "label": "62", "acciones": 35, "nota": "Retiro estimado", "tentativo": true }
       ],
@@ -43,16 +43,16 @@
     {
       "tipo": "cartera_sugerida",
       "titulo": "Cartera sugerida — punto de partida",
-      "subtitulo": "Perfil moderado/arriesgado para un horizonte de más de 25 años.",
+      "subtitulo": "Perfil moderado/arriesgado para un horizonte de más de 25 años, sin dependientes hoy.",
       "columnas": ["clase", "descripcion", "riesgo", "ponderacion"],
       "items": [
-        { "clase": "Renta Variable", "descripcion": "Cartera CEDEARs de ETFs", "riesgo": "Alto", "ponderacion": "70,0%" },
-        { "clase": "Renta Fija", "descripcion": "FCI Max Renta Fija Dólares", "riesgo": "Bajo", "ponderacion": "30,0%" }
+        { "clase": "Renta Variable", "descripcion": "Cartera CEDEARs de ETFs", "riesgo": "Alto", "ponderacion": "80,0%" },
+        { "clase": "Renta Fija", "descripcion": "FCI Max Renta Fija Dólares", "riesgo": "Bajo", "ponderacion": "20,0%" }
       ],
       "total": { "clase": "Total", "ponderacion": "100,0%" },
       "grafico": { "titulo": "Composición", "items": [
-        { "label": "Renta Variable", "valor": 70 },
-        { "label": "Renta Fija", "valor": 30 }
+        { "label": "Renta Variable", "valor": 80 },
+        { "label": "Renta Fija", "valor": 20 }
       ] },
       "nota": "Esta ponderación es el punto de partida del glidepath — se ajusta con el aporte real y con el tiempo."
     },

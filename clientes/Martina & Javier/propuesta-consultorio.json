@@ -15,13 +15,15 @@
       "subtitulo": "Esto es lo que entendimos de nuestra conversación. Si algo no coincide, corrijámoslo antes de avanzar.",
       "rasgos": [
         { "label": "Perfil de riesgo", "valor": "Conservador" },
+        { "label": "Actividad", "valor": "Oftalmólogos, consultorio propio en Pilar y Luján + hospitales" },
         { "label": "Capital a invertir", "valor": "USD 80.000" },
         { "label": "Dónde está hoy", "valor": "En una caja de seguridad, sin rendimiento" },
         { "label": "Objetivo", "valor": "Comprar una propiedad — horizonte flexible, ~2 años" }
       ],
       "notas": [
         "Saben que, parada en la caja de seguridad, esa plata pierde poder adquisitivo año tras año.",
-        "El objetivo final es la propiedad, pero no hay apuro: el horizonte de ~2 años es flexible, así que la cartera prioriza preservar el capital y mantenerlo disponible, no maximizar riesgo."
+        "Hoy sus ingresos dependen enteramente de estar presentes y poder atender — esta cartera es un primer paso para que no todo el patrimonio dependa de eso.",
+        "El objetivo final es la propiedad, pero no hay apuro: el horizonte de ~2 años es flexible. Javier incluso piensa que ese capital podría rendir más estando invertido — por eso la cartera suma una porción en renta variable, aunque se mantiene cauta en conjunto."
       ],
       "puntos": [
         "Capital en dólares, con foco en preservación.",
@@ -38,13 +40,13 @@
         { "label": "Capital a invertir", "valor": "USD 80.000", "accent": true }
       ],
       "items": [
-        { "clase": "Renta Fija", "descripcion": "FCI Max Renta Fija Dólares", "riesgo": "Bajo", "ponderacion": "80,0%", "monto": "USD 64.000" },
-        { "clase": "Renta Variable", "descripcion": "Cartera CEDEARs de ETFs", "riesgo": "Alto", "ponderacion": "20,0%", "monto": "USD 16.000" }
+        { "clase": "Renta Fija", "descripcion": "FCI Max Renta Fija Dólares", "riesgo": "Bajo", "ponderacion": "85,0%", "monto": "USD 68.000" },
+        { "clase": "Renta Variable", "descripcion": "Cartera CEDEARs de ETFs", "riesgo": "Alto", "ponderacion": "15,0%", "monto": "USD 12.000" }
       ],
       "total": { "clase": "Total", "ponderacion": "100,0%", "monto": "USD 80.000" },
       "grafico": { "titulo": "Composición", "items": [
-        { "label": "Renta Fija", "valor": 80 },
-        { "label": "Renta Variable", "valor": 20 }
+        { "label": "Renta Fija", "valor": 85 },
+        { "label": "Renta Variable", "valor": 15 }
       ] },
       "nota": "El horizonte es flexible: si la compra de la propiedad se corre en el tiempo, la cartera puede sostenerse sin cambios."
     },
@@ -76,7 +78,8 @@
         { "titulo": "Abrimos la cuenta", "texto": "A nombre de los dos." },
         { "titulo": "Fondeamos con el capital", "texto": "Los USD 80.000 que hoy están en la caja de seguridad." },
         { "titulo": "Rebalanceamos periódicamente", "texto": "Sosteniendo el foco en preservación de capital." },
-        { "titulo": "Reporting permanente", "texto": "Para que los dos sepan siempre cómo viene la cartera." }
+        { "titulo": "Reporting permanente", "texto": "Para que los dos sepan siempre cómo viene la cartera." },
+        { "titulo": "Cuentas individuales, más adelante", "texto": "Cuando quieran, cada uno puede abrir su propia cuenta y adoptar la estrategia que prefiera." }
       ]
     }
   ]

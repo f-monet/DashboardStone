@@ -3,7 +3,7 @@
 ## Quiénes son
 
 - **Martina Chau** — médica oftalmóloga. 35 años.
-- **Javier** — su pareja, también oftalmólogo. No están casados.
+- **Javier Leon** — su pareja, también oftalmólogo. No están casados.
 - No tienen hijos — la foto de perfil que usan es de una sobrina, no de una
   hija (corregido el 19/10/2026, antes anotado mal).
 - Jóvenes profesionales con buen presente: consultorio propio en **Pilar y

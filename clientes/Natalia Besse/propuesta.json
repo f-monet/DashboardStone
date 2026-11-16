@@ -1,0 +1,80 @@
+{
+  "cliente": { "nombre": "Natalia Besse" },
+  "asesores": [
+    { "nombre": "Francisco José Monet", "email": "fmonet@max.capital", "telefono": "11 5928 7717" }
+  ],
+  "fecha": "16/11/2026",
+  "anio": "2026",
+  "titulo": "Propuesta de Inversión",
+  "subtitulo": "Un respaldo líquido mientras decidís, y un plan a más plazo cuando ya lo tengas claro.",
+  "objetivo": "Dar un respaldo seguro y líquido mientras definís tu próximo paso profesional, y preparar un segundo portafolio a mediano/largo plazo para cuando decidas",
+  "capitulos": [
+    {
+      "tipo": "perfil",
+      "titulo": "Punto de partida",
+      "subtitulo": "Esto es lo que entendimos de tu situación. Si algo no coincide, corrijámoslo antes de avanzar.",
+      "rasgos": [
+        { "label": "Edad", "valor": "48 años" },
+        { "label": "Situación", "valor": "Retiro voluntario en negociación" },
+        { "label": "Próximo paso profesional", "valor": "Todavía a definir — relación de dependencia o por tu cuenta" },
+        { "label": "Monto", "valor": "A definir, según cierre la negociación" }
+      ],
+      "notas": [
+        "El monto final del retiro todavía está en negociación, así que este plan arranca sin cifras fijas — se ajusta el día que confirmes las condiciones.",
+        "Lo que sí podemos definir ahora es la lógica: cómo se organiza el capital mientras decidís, y qué cambia una vez que lo hayas decidido."
+      ],
+      "puntos": [
+        "Primero, liquidez y tranquilidad mientras definís tu próximo paso.",
+        "Después, cuando decidas y retires lo que necesites, armamos un segundo portafolio a más plazo.",
+        "A los 48 años tenés por delante varias décadas de horizonte para esa segunda etapa."
+      ]
+    },
+    {
+      "tipo": "texto",
+      "titulo": "El plan en dos etapas",
+      "columnas": [
+        { "titulo": "Etapa 1 — Corto plazo", "parrafos": [
+          "Mientras decidís tu próximo paso profesional, el capital queda en un respaldo líquido, generando rendimiento.",
+          "Lo podés retirar cuando lo necesites, sin que esperar una decisión te cueste rendimiento." ] },
+        { "titulo": "Etapa 2 — Mediano/largo plazo", "parrafos": [
+          "Una vez que definas tu camino y retires lo que haga falta para arrancarlo, armamos un segundo portafolio pensado a más plazo.",
+          "A los 48 años tenés por delante varias décadas de horizonte — ese capital puede trabajar con un criterio distinto al de la Etapa 1." ] }
+      ]
+    },
+    {
+      "tipo": "cartera_sugerida",
+      "titulo": "Cartera sugerida — Etapa 1 (corto plazo)",
+      "subtitulo": "Liquidez y estabilidad mientras definís tu próximo paso. Monto a definir, una vez que cierres las condiciones del retiro.",
+      "columnas": ["clase", "descripcion", "riesgo", "ponderacion"],
+      "items": [
+        { "clase": "Renta Fija", "descripcion": "FCI Max Renta Fija Dólares", "riesgo": "Bajo", "ponderacion": "100,0%" }
+      ],
+      "total": { "clase": "Total", "ponderacion": "100,0%" },
+      "nota": "Pensada para esta etapa: todo el capital en un vehículo líquido y de bajo riesgo, disponible cuando lo necesites."
+    },
+    {
+      "tipo": "instrumentos",
+      "titulo": "Qué hace este componente",
+      "fichas": [
+        {
+          "nombre": "FCI Max Renta Fija Dólares",
+          "tipo": "Fondo propio",
+          "riesgo": "Bajo",
+          "que_hace": "Es el respaldo de esta etapa: mantiene el capital en dólares, líquido y de bajo riesgo, con rescate en 24 horas para cuando decidas usarlo.",
+          "datos": [ { "label": "Rescate", "valor": "24 horas" }, { "label": "Moneda", "valor": "USD" } ]
+        }
+      ]
+    },
+    {
+      "tipo": "forma_de_trabajo",
+      "titulo": "Cómo seguimos",
+      "intro": "Nuestro rol es el de asesor: te acompañamos en las dos etapas, ajustando el plan a medida que se van confirmando los números y las decisiones.",
+      "pasos": [
+        { "titulo": "Definimos el monto de la Etapa 1", "texto": "Cuando confirmes las condiciones finales del retiro." },
+        { "titulo": "Armamos el respaldo líquido", "texto": "Mientras decidís tu próximo paso, con tiempo y sin presión de rendimiento perdido." },
+        { "titulo": "Diseñamos la Etapa 2", "texto": "Cuando definas tu camino y retires lo que necesites para arrancarlo." },
+        { "titulo": "Seguimiento permanente", "texto": "Reporting durante todo el proceso, en las dos etapas." }
+      ]
+    }
+  ]
+}
